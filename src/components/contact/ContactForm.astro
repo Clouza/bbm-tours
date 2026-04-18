@@ -1,0 +1,149 @@
+---
+---
+
+<div data-aos="fade-left" class="lg:col-span-7">
+  <div class="bg-surface-container-lowest rounded-lg p-6 md:p-12 shadow-[0_20px_40px_rgba(26,28,27,0.06)] h-full">
+    <h2 class="font-headline text-3xl md:text-[2.75rem] leading-tight tracking-tight text-primary mb-2">
+      Plan Your Journey
+    </h2>
+    <p class="font-body text-on-surface-variant mb-8 md:mb-10">
+      Tell us a bit about your dream escape, and we'll handle the rest.
+    </p>
+
+    <!-- Success State (hidden by default) -->
+    <div id="form-success" class="hidden flex-col items-center text-center py-12 gap-6">
+      <div class="w-20 h-20 bg-primary-fixed/30 rounded-full flex items-center justify-center">
+        <span class="material-symbols-outlined text-primary text-4xl" style="font-variation-settings:'FILL' 1">check_circle</span>
+      </div>
+      <div>
+        <h3 class="font-headline text-2xl text-primary mb-2">Inquiry Sent!</h3>
+        <p class="font-body text-on-surface-variant">Our team will reach out within 24 hours. Check your inbox or WhatsApp.</p>
+      </div>
+      <a href="/tours" class="inline-flex items-center gap-2 bg-primary text-on-primary font-label text-xs uppercase tracking-widest font-bold px-8 py-4 rounded-full hover:scale-[1.02] transition-transform">
+        Explore Our Journeys
+        <span class="material-symbols-outlined text-lg">arrow_forward</span>
+      </a>
+    </div>
+
+    <!-- Form -->
+    <form id="contact-form" class="space-y-6 md:space-y-8" novalidate>
+      <div class="grid grid-cols-1 sm:grid-cols-2 gap-6 md:gap-8">
+        <div class="space-y-2">
+          <label class="block font-label text-xs uppercase tracking-widest text-on-surface font-bold" for="name">Full Name</label>
+          <input
+            class="w-full bg-surface-container-high border-2 border-transparent rounded-lg px-4 py-3.5 font-body text-on-surface focus:outline-none focus:border-primary transition-colors"
+            id="name" name="name" placeholder="Wayan Darma" type="text" required
+          />
+          <p class="field-error hidden text-xs text-red-600 font-body mt-1">Please enter your name.</p>
+        </div>
+
+        <div class="space-y-2">
+          <label class="block font-label text-xs uppercase tracking-widest text-on-surface font-bold" for="email">Email Address</label>
+          <input
+            class="w-full bg-surface-container-high border-2 border-transparent rounded-lg px-4 py-3.5 font-body text-on-surface focus:outline-none focus:border-primary transition-colors"
+            id="email" name="email" placeholder="you@example.com" type="email" required
+          />
+          <p class="field-error hidden text-xs text-red-600 font-body mt-1">Please enter a valid email.</p>
+        </div>
+      </div>
+
+      <div class="grid grid-cols-1 sm:grid-cols-2 gap-6 md:gap-8">
+        <div class="space-y-2">
+          <label class="block font-label text-xs uppercase tracking-widest text-on-surface font-bold" for="dates">Expected Dates</label>
+          <div class="relative">
+            <input
+              class="w-full bg-surface-container-high border-2 border-transparent rounded-lg px-4 py-3.5 pl-12 font-body text-on-surface focus:outline-none focus:border-primary transition-colors"
+              id="dates" name="dates" placeholder="e.g., Oct 2025" type="text"
+            />
+            <span class="material-symbols-outlined absolute left-4 top-1/2 -translate-y-1/2 text-outline pointer-events-none">calendar_month</span>
+          </div>
+        </div>
+
+        <div class="space-y-2">
+          <label class="block font-label text-xs uppercase tracking-widest text-on-surface font-bold" for="interest">Interest</label>
+          <div class="relative">
+            <select
+              class="w-full bg-surface-container-high border-2 border-transparent rounded-lg px-4 py-3.5 font-body text-on-surface focus:outline-none focus:border-primary transition-colors appearance-none cursor-pointer"
+              id="interest" name="interest"
+            >
+              <option disabled selected value="">Select an experience...</option>
+              <option value="cultural">Cultural Immersion</option>
+              <option value="eco">Eco &amp; Sustainability</option>
+              <option value="luxury">Luxury Retreat</option>
+              <option value="custom">Custom Itinerary</option>
+            </select>
+            <span class="material-symbols-outlined absolute right-4 top-1/2 -translate-y-1/2 text-outline pointer-events-none">expand_more</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="space-y-2">
+        <label class="block font-label text-xs uppercase tracking-widest text-on-surface font-bold" for="message">Your Message</label>
+        <textarea
+          class="w-full bg-surface-container-high border-2 border-transparent rounded-lg px-4 py-3.5 font-body text-on-surface focus:outline-none focus:border-primary transition-colors resize-none"
+          id="message" name="message" placeholder="Tell us about what kind of experience you are looking for..." rows="4" required
+        ></textarea>
+        <p class="field-error hidden text-xs text-red-600 font-body mt-1">Please tell us about your trip.</p>
+      </div>
+
+      <button
+        id="submit-btn"
+        class="w-full bg-primary text-on-primary font-label text-xs uppercase tracking-widest font-bold py-5 rounded-lg shadow-[0_20px_40px_rgba(26,28,27,0.06)] hover:scale-[1.02] transition-transform duration-300 flex items-center justify-center gap-2 group"
+        type="submit"
+      >
+        <span id="btn-label">Send Inquiry</span>
+        <span id="btn-icon" class="material-symbols-outlined group-hover:translate-x-1 transition-transform duration-200">arrow_forward</span>
+        <span id="btn-spinner" class="hidden w-5 h-5 border-2 border-white/30 border-t-white rounded-full animate-spin"></span>
+      </button>
+    </form>
+  </div>
+</div>
+
+<script>
+  const form = document.getElementById('contact-form') as HTMLFormElement | null;
+  const success = document.getElementById('form-success');
+  const submitBtn = document.getElementById('submit-btn') as HTMLButtonElement | null;
+  const btnLabel = document.getElementById('btn-label');
+  const btnIcon = document.getElementById('btn-icon');
+  const btnSpinner = document.getElementById('btn-spinner');
+
+  function validateField(input: HTMLInputElement | HTMLTextAreaElement): boolean {
+    const error = input.closest('.space-y-2')?.querySelector('.field-error') as HTMLElement | null;
+    const valid = input.checkValidity();
+    error?.classList.toggle('hidden', valid);
+    input.classList.toggle('border-red-400', !valid);
+    input.classList.toggle('border-transparent', valid);
+    return valid;
+  }
+
+  form?.querySelectorAll('input[required], textarea[required]').forEach((el) => {
+    el.addEventListener('blur', () => validateField(el as HTMLInputElement));
+    el.addEventListener('input', () => validateField(el as HTMLInputElement));
+  });
+
+  form?.addEventListener('submit', async (e) => {
+    e.preventDefault();
+
+    let allValid = true;
+    form.querySelectorAll('input[required], textarea[required]').forEach((el) => {
+      if (!validateField(el as HTMLInputElement)) allValid = false;
+    });
+    if (!allValid) return;
+
+    // Show loading state
+    if (btnLabel) btnLabel.textContent = 'Sending...';
+    btnIcon?.classList.add('hidden');
+    btnSpinner?.classList.remove('hidden');
+    if (submitBtn) submitBtn.disabled = true;
+
+    // Simulate async submission (replace with real API call)
+    await new Promise((r) => setTimeout(r, 1200));
+
+    // Show success
+    form.classList.add('hidden');
+    if (success) {
+      success.classList.remove('hidden');
+      success.classList.add('flex');
+    }
+  });
+</script>

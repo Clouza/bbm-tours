@@ -1,0 +1,119 @@
+---
+---
+
+<aside class="w-full lg:w-1/4 shrink-0">
+  <div id="filter-sidebar" class="bg-surface-container-lowest rounded-lg p-6 md:p-8 shadow-[0_20px_40px_rgba(26,28,27,0.04)] lg:sticky lg:top-32" data-aos="fade-right">
+    <div class="flex items-center justify-between mb-8">
+      <h2 class="font-headline text-xl md:text-2xl text-primary">Refine Journey</h2>
+      <button id="clear-filters" class="text-on-surface-variant hover:text-primary transition-colors text-xs font-label uppercase tracking-widest">
+        Clear All
+      </button>
+    </div>
+
+    <!-- Category -->
+    <div class="mb-8 md:mb-10">
+      <h3 class="font-label text-xs uppercase tracking-widest text-on-surface-variant mb-4">Category</h3>
+      <div class="flex flex-col gap-3">
+        {['Adventure', 'Culture', 'Wellness'].map((cat) => (
+          <label class="flex items-center gap-3 cursor-pointer group select-none">
+            <div class="filter-checkbox w-5 h-5 rounded border-2 border-outline-variant flex items-center justify-center group-hover:border-primary transition-colors" data-checked="false">
+              <span class="material-symbols-outlined text-on-primary text-sm hidden check-icon">check</span>
+            </div>
+            <span class="font-body text-on-surface text-sm">{cat}</span>
+          </label>
+        ))}
+      </div>
+    </div>
+
+    <!-- Duration -->
+    <div class="mb-8 md:mb-10">
+      <h3 class="font-label text-xs uppercase tracking-widest text-on-surface-variant mb-4">Duration</h3>
+      <div class="flex flex-col gap-3" role="radiogroup">
+        {['1 Day', 'Multi-day'].map((dur, i) => (
+          <label class="flex items-center gap-3 cursor-pointer group select-none">
+            <div class={`filter-radio w-5 h-5 rounded-full border-2 flex items-center justify-center transition-colors ${i === 0 ? 'border-outline-variant group-hover:border-primary' : 'border-primary'}`} data-selected={i === 1 ? 'true' : 'false'}>
+              {i === 1 && <div class="w-2.5 h-2.5 bg-primary rounded-full"></div>}
+            </div>
+            <span class={`font-body text-sm ${i === 1 ? 'text-primary font-medium' : 'text-on-surface'}`}>{dur}</span>
+          </label>
+        ))}
+      </div>
+    </div>
+
+    <!-- Price Range -->
+    <div>
+      <h3 class="font-label text-xs uppercase tracking-widest text-on-surface-variant mb-4">Price Range</h3>
+      <input
+        id="price-range"
+        type="range"
+        min="50"
+        max="800"
+        value="500"
+        class="w-full accent-primary cursor-pointer"
+      />
+      <div class="flex justify-between font-label text-xs text-on-surface-variant mt-2">
+        <span>$50</span>
+        <span id="price-display" class="text-primary font-bold">Up to $500</span>
+        <span>$800+</span>
+      </div>
+    </div>
+  </div>
+</aside>
+
+<script>
+  // Checkbox toggle
+  document.querySelectorAll('.filter-checkbox').forEach((box) => {
+    const parent = box.closest('label');
+    const icon = box.querySelector('.check-icon') as HTMLElement | null;
+    const label = parent?.querySelector('span:last-child') as HTMLElement | null;
+
+    parent?.addEventListener('click', () => {
+      const checked = box.getAttribute('data-checked') === 'true';
+      box.setAttribute('data-checked', String(!checked));
+      box.classList.toggle('bg-primary', !checked);
+      box.classList.toggle('border-primary', !checked);
+      box.classList.toggle('border-outline-variant', checked);
+      icon?.classList.toggle('hidden', checked);
+      label?.classList.toggle('text-primary', !checked);
+      label?.classList.toggle('font-medium', !checked);
+    });
+  });
+
+  // Radio toggle
+  const radios = document.querySelectorAll('.filter-radio');
+  radios.forEach((radio, idx) => {
+    radio.closest('label')?.addEventListener('click', () => {
+      radios.forEach((r, i) => {
+        const dot = r.querySelector('div');
+        const labelEl = r.closest('label')?.querySelector('span:last-child') as HTMLElement | null;
+        const isSelected = i === idx;
+        r.setAttribute('data-selected', String(isSelected));
+        r.classList.toggle('border-primary', isSelected);
+        r.classList.toggle('border-outline-variant', !isSelected);
+        if (dot) dot.classList.toggle('hidden', !isSelected);
+        labelEl?.classList.toggle('text-primary', isSelected);
+        labelEl?.classList.toggle('font-medium', isSelected);
+      });
+    });
+  });
+
+  // Price range
+  const range = document.getElementById('price-range') as HTMLInputElement | null;
+  const display = document.getElementById('price-display');
+  range?.addEventListener('input', () => {
+    if (display) display.textContent = `Up to $${range.value}`;
+  });
+
+  // Clear filters
+  document.getElementById('clear-filters')?.addEventListener('click', () => {
+    document.querySelectorAll('.filter-checkbox').forEach((box) => {
+      box.setAttribute('data-checked', 'false');
+      box.classList.remove('bg-primary', 'border-primary');
+      box.classList.add('border-outline-variant');
+      box.querySelector('.check-icon')?.classList.add('hidden');
+      const label = box.closest('label')?.querySelector('span:last-child') as HTMLElement | null;
+      label?.classList.remove('text-primary', 'font-medium');
+    });
+    if (range) { range.value = '800'; if (display) display.textContent = 'Up to $800'; }
+  });
+</script>

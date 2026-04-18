@@ -1,0 +1,37 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Navbar from '../components/Navbar.astro';
+import Footer from '../components/Footer.astro';
+import ContactInfo from '../components/contact/ContactInfo.astro';
+import ContactForm from '../components/contact/ContactForm.astro';
+---
+
+<Layout
+  title="Contact Us - BBM Tours & Travel"
+  description="Craft your ultimate Bali escape. Let our local insiders design an unforgettable custom-tailored journey just for you."
+>
+  <Navbar />
+  <main class="pt-12 md:pt-24 pb-20 md:pb-32">
+    <!-- Hero -->
+    <section class="max-w-7xl mx-auto px-4 md:px-12 mb-12 md:mb-24">
+      <div data-aos="fade-up" class="text-center max-w-3xl mx-auto">
+        <h1 class="font-headline text-4xl md:text-[3.5rem] leading-tight tracking-tight text-primary mb-4 md:mb-6">
+          Craft Your Ultimate Bali Escape
+        </h1>
+        <p class="font-body text-base md:text-xl text-on-surface-variant leading-relaxed">
+          Discover exclusive jungle sanctuaries and breathtaking coastal vistas. Let our local insiders
+          design an unforgettable, custom-tailored journey just for you.
+        </p>
+      </div>
+    </section>
+
+    <!-- Two-Column Layout -->
+    <section class="max-w-7xl mx-auto px-4 md:px-12">
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-10 md:gap-16 lg:gap-24">
+        <ContactInfo />
+        <ContactForm />
+      </div>
+    </section>
+  </main>
+  <Footer />
+</Layout>

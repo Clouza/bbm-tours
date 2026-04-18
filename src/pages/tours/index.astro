@@ -1,0 +1,82 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import Navbar from '../../components/Navbar.astro';
+import Footer from '../../components/Footer.astro';
+import TourCard from '../../components/tours/TourCard.astro';
+import FilterSidebar from '../../components/tours/FilterSidebar.astro';
+
+const tours = [
+  {
+    image: 'https://lh3.googleusercontent.com/aida-public/AB6AXuBFJkwV8wqDU0THWOyhKc6GUrcgPmftz4TQEXLcpuOfVlinLNWiThFvmVPwbUJZAjm4gjvE4VdE1BDvNYQj7-DdgZ638YZG6G60zn7bR-AyBOTDkn0dwCuNNHHYYAJg_oXAM022sXvJgAwCdFHRTKY2FBub4BxcvXjtnIP8rp503NNlU-p_Rr1pgjbG5oIkLy5wMNlKHoK9npRmsZZjRhDr11jqMWqjqwkIseX9GGr8PRnNZjhcT-Tz5MhtzqpZovyUHo3Ae9p6ik4',
+    alt: 'Traditional Balinese dancers in ancient stone temple courtyard', duration: 'Full Day',
+    title: 'Ubud Art & Culture Immersion', price: '$120', aosDelay: '0',
+    description: "Unleash your creative spirit in Bali's cultural epicenter. Connect with legendary artisans, explore hidden workshops, and be captivated by an exclusive royal palace dance performance.",
+  },
+  {
+    image: 'https://lh3.googleusercontent.com/aida-public/AB6AXuCYar8fmEv6VLw4PDy03JSz7ibfgRhw5Pedlc733t_KJOGflMygv_Spvqwd_nTN5ed6QSwuDtQl4XX_KxvXoY4qT_mSn5_Uxj2yVZKW7hrXOhDg_An8yKsjooKkbZJP8lSh6EOzDdQorL8BfdynblDAiWAcDPQjZ6sOf16BOEPNHniUbxdqv0DBODnbBQze4Z1XGASsWQxEyuHk2MaaX5dF9162-Wop_sZGXL7xz73btPi82UzXiLf6SyVNUhMQ7kKY_oWDibZcx9s',
+    alt: 'Breathtaking sunrise from Mount Batur summit', duration: '12 Hours',
+    title: 'Mount Batur Sunrise Trek', price: '$85', badge: 'Popular', aosDelay: '100',
+    href: '/tours/jeep-sunrise',
+    description: 'Conquer the sacred peak of Mount Batur in an unforgettable pre-dawn expedition. Witness a breathtaking sunrise above the clouds, complete with a volcano-steamed breakfast.',
+  },
+  {
+    image: 'https://lh3.googleusercontent.com/aida-public/AB6AXuCDCXVuJLaNoPmeUfgDbnIeu-2c1sxtWC_BbfZqt8feORrulqT27-FKJnHCIK7vUhK88BygJRLHctXTr4WLlaw0PlIM6c2DugMQ_XCjA_wDQHuUl8AToshXVEa3788duxVq7v_8dsbzz2UiyVXvoF3OZvybDzq6pdghhtrB_GrQB212q8AnR2c1iyO11sGVyhW_34Sxzzt0m7EowMOJseKv11e2ZDAqcu3bAlyUlV5Jmv4CSxyimDvhD8fZTpAudSFXzlUCBKhptAQ',
+    alt: 'Emerald UNESCO-protected Jatiluwih rice terraces', duration: 'Half Day',
+    title: 'Jatiluwih Rice Terraces Walk', price: '$65', aosDelay: '0',
+    description: "Step into a living postcard at Jatiluwih. Trek through emerald, UNESCO-protected terraces, uncover ancient farming secrets, and savor a farm-to-table feast overlooking the valleys.",
+  },
+  {
+    image: 'https://lh3.googleusercontent.com/aida-public/AB6AXuBiWGz06colKwna9tf2M3lRDc5qUlTu4QCTqZzk9_HuwH7Ax0dTQxfVg05LZnSqBNrfhPdTi17eD6-Kab3S6LAEy_TAHw8zfG0AnVdWCQYc23p9vj6U8MuDXrMXYBUfrd4Fy1rnLvFiPn2s9DV5hv_u8zmYWdBsSZPIG5aQq2ZbXZsng8oEwgm6iygh95-wDVeBDwLFgcukvAvR-yqwNRSeGcIYLFxT4OL55cyNE9jjf02-Z5pT_WBVg7XfXeb0PN-Sy1HduMaFjrw',
+    alt: 'Dramatic limestone cliffs at Kelingking Beach, Nusa Penida', duration: '2 Days',
+    title: 'Nusa Penida Coastal Explorer', price: '$290', aosDelay: '100',
+    description: "Embark on an epic island adventure to Nusa Penida's untamed coast. Swim alongside gentle giant Manta Rays, capture iconic cliffside views, and sleep under the stars in a luxury eco-lodge.",
+  },
+];
+---
+
+<Layout
+  title="Explore Our Curated Bali Journeys - BBM Tours & Travel"
+  description="Elevate your journey with our handpicked, immersive Bali experiences."
+>
+  <Navbar activePage="destinations" />
+
+  <main class="max-w-screen-2xl mx-auto px-4 md:px-8 py-12 md:py-24">
+    <div data-aos="fade-up" class="mb-12 md:mb-24 max-w-3xl">
+      <h1 class="text-3xl md:text-[3.5rem] leading-tight font-headline tracking-tight text-primary mb-4 md:mb-6">
+        Unlock Extraordinary Bali Adventures
+      </h1>
+      <p class="text-base md:text-xl text-on-surface-variant font-body leading-relaxed">
+        Elevate your journey with our handpicked, immersive experiences. Dive into the island's authentic soul,
+        pristine nature, and vibrant culture for memories that last a lifetime.
+      </p>
+    </div>
+
+    <div class="flex flex-col lg:flex-row gap-8 md:gap-12">
+      <FilterSidebar />
+
+      <div class="w-full lg:w-3/4">
+        <div class="grid grid-cols-1 sm:grid-cols-2 gap-6 md:gap-8 lg:gap-12">
+          {tours.map((tour) => <TourCard {...tour} />)}
+        </div>
+
+        <!-- Pagination -->
+        <div class="mt-12 md:mt-16 flex justify-center items-center gap-3 md:gap-4">
+          <button class="w-11 h-11 md:w-12 md:h-12 rounded-full border border-outline-variant flex items-center justify-center text-on-surface hover:border-primary hover:text-primary transition-colors disabled:opacity-40 disabled:cursor-not-allowed" disabled aria-label="Previous page">
+            <span class="material-symbols-outlined">chevron_left</span>
+          </button>
+          <div class="flex items-center gap-2 font-label text-sm">
+            <span class="w-10 h-10 rounded-full bg-primary text-on-primary flex items-center justify-center font-bold">1</span>
+            <span class="w-10 h-10 rounded-full hover:bg-surface-variant text-on-surface flex items-center justify-center cursor-pointer transition-colors">2</span>
+            <span class="w-10 h-10 rounded-full hover:bg-surface-variant text-on-surface flex items-center justify-center cursor-pointer transition-colors">3</span>
+            <span class="text-on-surface-variant px-1">...</span>
+          </div>
+          <button class="w-11 h-11 md:w-12 md:h-12 rounded-full border border-outline-variant flex items-center justify-center text-on-surface hover:border-primary hover:text-primary transition-colors" aria-label="Next page">
+            <span class="material-symbols-outlined">chevron_right</span>
+          </button>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <Footer />
+</Layout>

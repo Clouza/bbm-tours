@@ -1,0 +1,129 @@
+---
+const tours = [
+  {
+    id: 1,
+    colSpan: 'md:col-span-8',
+    height: 'h-[420px] md:h-[500px]',
+    image: 'https://lh3.googleusercontent.com/aida-public/AB6AXuDXShh-VJve6nuo6iI24WhMSre05uiGOKeJhJhLIlpFnJowKU5Tskwud0r8aEFVCzV6gk368qSfgzF-Wt3cWKvm4SvR_yLn84QrXVggmvk4P2fxiHX96dtI89HONBuzcceYD_tIuVEa9cKevsAlc-s-pruXrqSqC_P3qra7KIQGdhxi45OcW6F14JcJVw_rErA8hmVS-aet4tRg8O34kSIvfpKq_JmzK2IuInGhzSZPhD1-3a1bO40N0D0a5xN136QRWKNTOM8ZV8Q',
+    alt: 'Vintage Jeep Sunrise Safari',
+    duration: '1 Day',
+    title: 'Mount Batur Sunrise Safari',
+    price: 'From $120',
+    layout: 'wide',
+    delay: '0',
+  },
+  {
+    id: 2,
+    colSpan: 'md:col-span-4',
+    height: 'h-[420px] md:h-[500px]',
+    image: 'https://lh3.googleusercontent.com/aida-public/AB6AXuA6QkJdTZ6enbdLwCu9uZPG1NxB44-qtfxrzYbB32jVUoFT0vFh13hBg_Z--xteyUrpMr5UNbBZRW2q4HO6gyiYh_yjDEbfPE7wMEODwS4E9np5olK3jpNbSDBPaLKhoJx0YEg8R89uY7kNJvJWaHfQ1r9jjr9oUKKaIWq2cU9NKwT7cvvi-l3akQCE8E8nawg3Xl05BSqhMKWqZqOagfjWy8uBXIwfmk3YTxpPbvQzfiyyNGddthhyxZP_cvJFivGBpZwEvyjMRYo',
+    alt: 'Private Jungle Waterfall Trek',
+    duration: '1 Day',
+    title: 'Private Eco Trekking',
+    price: 'From $95',
+    layout: 'tall',
+    delay: '100',
+  },
+  {
+    id: 3,
+    colSpan: 'md:col-span-5',
+    height: 'h-[360px] md:h-[400px]',
+    image: 'https://lh3.googleusercontent.com/aida-public/AB6AXuDULnBH9mrrfr10C96rh35npdcd0d92ENKa9JMyApeUuKa10QP3mAg_rUolKMqf3Duk5ATNoTV3Jo0zkJm6TJVW1obZMtuQQ3DolqfpIrKNa48xacr1sbkEhblMIauGMTQv-IxzEl7Nko0kynE9Knrw38U4Tvehf5BwaSLGdXUkaNzjbMPw2yj9NdQcRVEn0dD1w8pr_9xPp8bgDgpG1Rc4866OkcefuP1JYmApPy-N3k0q1LUYqDl52pwrIj6colYqOEpMCoGfmSM',
+    alt: 'Luxury Glamping Retreat',
+    duration: '3D2N',
+    title: 'Luxury Glamping Escape',
+    price: 'From $350',
+    layout: 'tall',
+    delay: '0',
+  },
+  {
+    id: 4,
+    colSpan: 'md:col-span-7',
+    height: 'h-[360px] md:h-[400px]',
+    image: 'https://lh3.googleusercontent.com/aida-public/AB6AXuA2xbdFn3EEydzhhQj_EtuQAKNjg5WzzDMTz85RlrEmxHVfeoUG5gB3S76z7m5y24k54DlRqAG0Rn8eW1E8O18EaCowA1qHrCmacp3MRl_fiir_dVoW8u0UittoytueOyPbtgAdSOcoEjPcrY-1fKo_2MQRwIay8axL7ZtT16YoZM__5k9NXHbBRyurMTmLPOMPlgxnf6yYu2HgrgLcB3qWzEwt-EJx9gmAVHVRVCrp_eW3ehN1v2IJz832D43q61hVWbRzwy9_nwk',
+    alt: 'Nusa Penida Coastal Yacht Tour',
+    duration: '2D1N',
+    title: 'Coastal Yacht Paradise',
+    price: 'From $450',
+    layout: 'wide',
+    delay: '100',
+  },
+];
+---
+
+<section class="max-w-7xl mx-auto px-4 md:px-8 mb-24 md:mb-32 relative">
+  <div class="absolute -top-32 -left-32 w-64 h-64 bg-secondary-container/20 rounded-full blur-3xl -z-10"></div>
+
+  <div
+    data-aos="fade-up"
+    class="mb-12 md:mb-16 flex flex-col md:flex-row md:items-end justify-between gap-6"
+  >
+    <div>
+      <h2 class="font-headline text-3xl md:text-5xl font-bold text-primary mb-4 tracking-tight">
+        Exclusive Balinese Journeys
+      </h2>
+      <p class="font-body text-base md:text-lg text-on-surface-variant max-w-2xl font-light">
+        Immerse yourself in our meticulously crafted itineraries, blending pure luxury with profound cultural connection.
+      </p>
+    </div>
+    <a
+      href="/tours"
+      class="text-primary font-label font-bold uppercase tracking-widest text-sm flex items-center gap-2 hover:text-secondary transition-colors shrink-0"
+    >
+      View All Experiences
+      <span class="material-symbols-outlined">arrow_forward</span>
+    </a>
+  </div>
+
+  <div class="grid grid-cols-1 md:grid-cols-12 gap-4 md:gap-6">
+    {tours.map((tour) => (
+      <div
+        data-aos="fade-up"
+        data-aos-delay={tour.delay}
+        class={`${tour.colSpan} group relative rounded-3xl md:rounded-lg overflow-hidden ${tour.height} shadow-xl`}
+      >
+        <img
+          alt={tour.alt}
+          class="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-105"
+          src={tour.image}
+        />
+        <div class="absolute inset-0 bg-linear-to-t from-primary/95 via-primary/30 to-transparent opacity-90 group-hover:opacity-100 transition-opacity duration-500"></div>
+
+        <div class={`absolute bottom-0 left-0 p-6 md:p-8 w-full ${tour.layout === 'wide' ? 'flex justify-between items-end' : ''}`}>
+          <div>
+            <span class="inline-block bg-white text-primary font-label text-xs font-bold px-4 py-1.5 rounded-full mb-3 tracking-widest uppercase shadow-sm">
+              {tour.duration}
+            </span>
+            <h3 class={`font-headline font-bold text-white mb-2 ${tour.layout === 'wide' ? 'text-2xl md:text-3xl' : 'text-xl md:text-2xl leading-tight'}`}>
+              {tour.title}
+            </h3>
+            <p class={`font-body text-secondary-container font-medium ${tour.layout === 'wide' ? 'text-lg md:text-xl' : 'text-base md:text-lg'}`}>
+              {tour.price}
+              <span class="text-white/70 font-normal text-sm"> / person</span>
+            </p>
+          </div>
+
+          {tour.layout === 'wide' ? (
+            <a
+              href="/tours/jeep-sunrise"
+              class="bg-secondary-container text-on-secondary-container w-11 h-11 md:w-12 md:h-12 rounded-full flex items-center justify-center hover:-translate-y-1 hover:shadow-lg transition-all duration-300 shrink-0 ml-4"
+              aria-label={`View ${tour.title}`}
+            >
+              <span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1">arrow_forward</span>
+            </a>
+          ) : (
+            <div class="flex justify-end mt-4">
+              <a
+                href="/tours/jeep-sunrise"
+                class="bg-white/20 backdrop-blur-md text-white w-10 h-10 rounded-full flex items-center justify-center hover:bg-secondary-container transition-all duration-300"
+                aria-label={`View ${tour.title}`}
+              >
+                <span class="material-symbols-outlined text-xl">arrow_outward</span>
+              </a>
+            </div>
+          )}
+        </div>
+      </div>
+    ))}
+  </div>
+</section>

@@ -1,0 +1,37 @@
+---
+const features = [
+  { icon: 'diamond',       title: 'Curated Luxury',        description: 'Immerse yourself in world-class comfort, from five-star boutique villas to premium private transport.',                      rotate: 'rotate-3'  },
+  { icon: 'explore',       title: 'Exclusive Access',       description: 'Discover untouched hidden gems and authentic ceremonies far beyond the typical tourist corridors.',                            rotate: '-rotate-3' },
+  { icon: 'spa',           title: 'Conscious Travel',       description: 'Experience deeply sustainable tourism that directly honors and uplifts local Balinese communities.',                           rotate: 'rotate-3'  },
+  { icon: 'edit_calendar', title: 'Bespoke Itineraries',    description: 'Every moment is tailored to your desires, allowing for spontaneous discovery at your own graceful pace.',                    rotate: '-rotate-3' },
+  { icon: 'star',          title: 'Unrivaled Hospitality',  description: 'Experience the legendary warmth of Bali, delivered with impeccable, intuitive professional standards.',                      rotate: 'rotate-3'  },
+  { icon: 'diversity_1',   title: 'Private Guides',         description: 'Accompanied by elite local experts who anticipate your needs and share profound cultural insights.',                          rotate: '-rotate-3' },
+];
+---
+
+<section class="bg-primary py-24 md:py-32 mb-24 md:mb-32 rounded-xl mx-3 md:mx-4 relative overflow-hidden">
+  <div class="absolute inset-0 bg-primary/95"></div>
+
+  <div class="max-w-7xl mx-auto px-6 md:px-8 relative z-10">
+    <div data-aos="fade-up" class="text-center mb-16 md:mb-24">
+      <h2 class="font-headline text-3xl md:text-5xl font-bold text-white tracking-tight mb-6">
+        The BBM Tours Distinction
+      </h2>
+      <p class="font-body text-lg md:text-xl text-white/80 max-w-2xl mx-auto font-light">
+        Elevating your Balinese escape with uncompromising luxury, sustainability, and authentic local access.
+      </p>
+    </div>
+
+    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-y-12 md:gap-y-16 gap-x-8 md:gap-x-12">
+      {features.map((f, i) => (
+        <div data-aos="fade-up" data-aos-delay={String((i % 3) * 100)} class="flex flex-col items-center text-center">
+          <div class={`w-20 h-20 bg-secondary-container/10 border border-secondary-container/30 rounded-2xl flex items-center justify-center mb-8 text-secondary-container ${f.rotate} hover:rotate-0 transition-transform duration-300`}>
+            <span class="material-symbols-outlined text-4xl" style="font-variation-settings:'FILL' 0,'wght' 300">{f.icon}</span>
+          </div>
+          <h3 class="font-headline text-xl md:text-2xl font-bold text-white mb-4">{f.title}</h3>
+          <p class="font-body text-white/70 text-base leading-relaxed font-light">{f.description}</p>
+        </div>
+      ))}
+    </div>
+  </div>
+</section>

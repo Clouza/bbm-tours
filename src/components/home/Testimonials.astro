@@ -1,0 +1,54 @@
+---
+const testimonials = [
+  {
+    quote: '"An absolutely unparalleled experience. Our guide was incredibly insightful and secured us private access to ceremonies we would never have witnessed otherwise. True luxury."',
+    name: 'Sarah Jenkins', origin: 'Australia',
+    avatar: 'https://lh3.googleusercontent.com/aida-public/AB6AXuCsAmCw_7eXer3dnmnLZ1BhAycM19A1DMm3YXx6IOK4ysJGb9kgAuSWA4oun81hMCCxpZQdYLZJPcPQ46mBfmKNAg3GMbsmVE4QPdBQkewdcOYc-gvYTymPPCT0-u-A3nCO-B5lNbtKB7O6aEU_1kXAFO8sHkR8Qgn-gPBRVpCpAoSqz5gVCA_y597t4heVGUADYRQ27Whz8sboox89l5xkJwS7UMk8XVKiUTicQVHEpepyUEW5WA5FM2fm1iYYUdk7pUWKAYkF684',
+  },
+  {
+    quote: '"The exclusive glamping retreat was breathtaking. Waking up in five-star comfort amidst the raw jungle was a dream. They perfectly balance profound nature with high-end refinement."',
+    name: 'Marcus Chen', origin: 'Singapore',
+    avatar: 'https://lh3.googleusercontent.com/aida-public/AB6AXuAP_ofqk6jFuzHDXK-BbWH0LSnj7ZrsP45QSMvMhHmxpuHS-9TJZIHF6sZ5m33M8o4rC31XBpkLsL6xUOVF2c3-syWVX8hXY7PKc9VaGRHMWXGuXeDqoUUZoWCjuDGTiMyXbGql-whWRBqaOUWMGeRBQCfoH2q1g26gfrg3Q0mTq3hSXUDaRrPFmInnrVTje6IP0Ii8K3ZtDIpdBGtA98ODO5kcCswbZNi4frZJffmC0CS9f42J13Dj5povI231oH5w72-49fhBSQE',
+  },
+  {
+    quote: '"Flawless execution. When we requested a sudden change to sail at sunset instead, it was orchestrated seamlessly. The concierge-level care made our anniversary extraordinary."',
+    name: 'Emma & David', origin: 'United Kingdom',
+    avatar: 'https://lh3.googleusercontent.com/aida-public/AB6AXuDLCtQQ_DIDFTTC8mjy9ioBoqMP6xL_uyV0dPja87XaT6ZMRqBwjYcPS0LjMDGYuHf44Y97zdCnsfkAB4MFqxdjpTdnPeS4b4qBo7Ef6SkDmPDJ2idU0U1PQKZQLBqunuuiSgBo0Wavxo1soJtGiBNjQQqwDEx0nCLVNv_6GU0gP4kvdiXDEZhSLWmFwXzWS7PyeLTmri_cmc3PcMLZhBxt-34lJYGVsxHu8TozS5p4y7N7rtPOknmMwHqRGeK6usYaPTtz1Z_1Evo',
+  },
+];
+---
+
+<section class="max-w-7xl mx-auto px-4 md:px-8 mb-24 md:mb-32">
+  <div data-aos="fade-up" class="text-center mb-12 md:mb-16">
+    <h2 class="font-headline text-3xl md:text-5xl font-bold text-primary tracking-tight mb-4">
+      Voices of Our Guests
+    </h2>
+    <p class="font-body text-base md:text-lg text-on-surface-variant max-w-2xl mx-auto font-light">
+      Reflections from those who have embraced the BBM Tours experience.
+    </p>
+  </div>
+
+  <div class="grid grid-cols-1 md:grid-cols-3 gap-6 md:gap-8">
+    {testimonials.map((t, i) => (
+      <div
+        data-aos="fade-up"
+        data-aos-delay={String(i * 100)}
+        class="bg-surface-container-lowest p-6 md:p-8 rounded-lg shadow-lg border border-outline-variant/20 hover:shadow-xl transition-shadow duration-300 flex flex-col"
+      >
+        <div class="flex gap-1 text-secondary-container mb-6">
+          {Array.from({ length: 5 }).map(() => (
+            <span class="material-symbols-outlined" style="font-variation-settings:'FILL' 1">star</span>
+          ))}
+        </div>
+        <p class="font-body text-on-surface-variant leading-relaxed mb-8 italic font-light grow">{t.quote}</p>
+        <div class="flex items-center gap-4">
+          <img alt={t.name} class="w-12 h-12 rounded-full object-cover shrink-0" src={t.avatar} />
+          <div>
+            <h4 class="font-headline font-bold text-primary">{t.name}</h4>
+            <p class="font-body text-sm text-on-surface-variant/70">{t.origin}</p>
+          </div>
+        </div>
+      </div>
+    ))}
+  </div>
+</section>

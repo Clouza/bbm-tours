@@ -1,0 +1,59 @@
+@import "tailwindcss";
+
+@theme {
+  /* Colors */
+  --color-primary: #154212;
+  --color-on-primary: #ffffff;
+  --color-primary-fixed: #bcf0ae;
+  --color-primary-fixed-dim: #a1d494;
+  --color-on-primary-fixed: #002201;
+  --color-primary-container: #2d5a27;
+  --color-on-primary-container: #9dd090;
+
+  --color-secondary: #825500;
+  --color-on-secondary: #ffffff;
+  --color-secondary-fixed: #ffddb3;
+  --color-secondary-fixed-dim: #ffb94f;
+  --color-on-secondary-fixed: #291800;
+  --color-secondary-container: #ffb231;
+  --color-on-secondary-container: #6d4700;
+
+  --color-surface: #f9f9f6;
+  --color-surface-dim: #dadad7;
+  --color-surface-bright: #f9f9f6;
+  --color-surface-container-lowest: #ffffff;
+  --color-surface-container-low: #f4f4f1;
+  --color-surface-container: #eeeeeb;
+  --color-surface-container-high: #e8e8e5;
+  --color-surface-container-highest: #e2e3e0;
+  --color-surface-variant: #e2e3e0;
+
+  --color-on-surface: #1a1c1b;
+  --color-on-surface-variant: #42493e;
+  --color-background: #f9f9f6;
+  --color-on-background: #1a1c1b;
+
+  --color-outline: #72796e;
+  --color-outline-variant: #c2c9bb;
+  --color-inverse-surface: #2f312f;
+  --color-inverse-on-surface: #f1f1ee;
+  --color-inverse-primary: #a1d494;
+
+  /* Border Radius */
+  --radius-DEFAULT: 1rem;
+  --radius-lg: 2rem;
+  --radius-xl: 3rem;
+  --radius-full: 9999px;
+
+  /* Font Families */
+  --font-headline: "Noto Serif", serif;
+  --font-body: "Inter", sans-serif;
+  --font-label: "Plus Jakarta Sans", sans-serif;
+}
+
+body {
+  background-color: var(--color-background);
+  color: var(--color-on-surface);
+  font-family: var(--font-body);
+  -webkit-font-smoothing: antialiased;
+}

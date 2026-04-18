@@ -1,0 +1,62 @@
+---
+interface Props {
+  image: string;
+  alt: string;
+  duration: string;
+  title: string;
+  price: string;
+  description: string;
+  badge?: string;
+  href?: string;
+  aosDelay?: string;
+}
+
+const { image, alt, duration, title, price, description, badge, href = '/tours/jeep-sunrise', aosDelay = '0' } = Astro.props;
+---
+
+<article
+  data-aos="fade-up"
+  data-aos-delay={aosDelay}
+  class="group bg-surface-container-lowest rounded-lg overflow-hidden shadow-[0_20px_40px_rgba(26,28,27,0.03)] hover:shadow-[0_30px_60px_rgba(26,28,27,0.08)] transition-all duration-500 flex flex-col h-full"
+>
+  <div class="relative h-64 md:h-72 overflow-hidden">
+    <img
+      alt={alt}
+      class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
+      src={image}
+    />
+    <div class="absolute inset-0 bg-linear-to-t from-primary-container/60 via-transparent to-transparent opacity-60"></div>
+
+    <div class="absolute top-4 left-4 bg-surface/80 backdrop-blur-md px-3 py-1.5 rounded-full flex items-center gap-2">
+      <span class="material-symbols-outlined text-base text-primary">schedule</span>
+      <span class="font-label text-xs uppercase tracking-widest text-primary">{duration}</span>
+    </div>
+
+    {badge && (
+      <div class="absolute top-4 right-4 bg-secondary-container text-on-secondary-container px-3 py-1.5 rounded-full font-label text-xs uppercase tracking-widest shadow-sm">
+        {badge}
+      </div>
+    )}
+  </div>
+
+  <div class="p-6 md:p-8 flex flex-col grow">
+    <div class="flex justify-between items-start mb-4 gap-4">
+      <h3 class="font-headline text-xl md:text-2xl text-primary leading-tight group-hover:text-secondary transition-colors">
+        {title}
+      </h3>
+      <div class="text-right shrink-0">
+        <span class="block text-sm text-on-surface-variant font-body">From</span>
+        <span class="font-headline text-xl text-primary">{price}</span>
+      </div>
+    </div>
+
+    <p class="text-on-surface-variant font-body mb-6 line-clamp-3 text-sm md:text-base grow">{description}</p>
+
+    <a
+      href={href}
+      class="block w-full text-center bg-primary hover:bg-primary-container text-on-primary px-6 py-4 rounded-lg font-label text-xs uppercase tracking-widest transition-all duration-300 shadow-[0_10px_20px_rgba(21,66,18,0.1)] hover:scale-[1.02]"
+    >
+      View Details
+    </a>
+  </div>
+</article>
