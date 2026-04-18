@@ -1,64 +1,48 @@
 ---
 const pillars = [
-  { icon: 'diversity_3', title: 'Community First',         description: 'We partner directly with local villages, ensuring tourism revenue stays within the community and supports local enterprises.'                            },
-  { icon: 'nature',      title: 'Zero Trace Expeditions',  description: 'From eliminating single-use plastics on our tours to funding local reforestation projects, we tread lightly.'                                           },
-  { icon: 'handshake',   title: 'Cultural Respect',        description: 'We educate our guests on Balinese customs, fostering deep respect and meaningful interactions rather than mere observation.'                              },
+  { icon: 'travel_explore',   title: 'A Whole Experience in One Package', description: 'From transport and accommodation to guided activities, every detail is taken care of so you can focus entirely on the journey.'  },
+  { icon: 'explore',          title: 'Unexpected Journey',                description: 'We craft experiences that surprise and inspire — going beyond the ordinary to reveal the hidden soul of every destination.'          },
+  { icon: 'shield_person',    title: 'Comfort and Private',               description: 'Enjoy private tours designed around your pace and preferences, ensuring an intimate and relaxed experience throughout.'               },
+  { icon: 'edit_calendar',    title: 'Flexible Itinerary',                description: 'Your journey, your schedule. We adapt every itinerary to your wishes, giving you the freedom to explore on your own terms.'           },
+  { icon: 'star',             title: 'Hospitality & Quality',             description: 'We uphold the highest standards of service quality, ensuring every moment reflects our deep commitment to genuine hospitality.'        },
+  { icon: 'person_celebrate', title: 'Personalised Service',              description: 'Every traveler is unique. We tailor our services to your individual needs, making each trip a truly personal and memorable experience.' },
 ];
 ---
 
 <section class="py-24 md:py-32 px-4 md:px-8 bg-surface-container-low relative overflow-hidden">
   <div class="max-w-screen-2xl mx-auto">
-    <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 md:gap-16 items-center">
 
-      <!-- Image -->
-      <div data-aos="fade-right" class="relative rounded-lg overflow-hidden h-96 md:h-150 shadow-[0_20px_40px_rgba(26,28,27,0.06)] group">
-        <img
-          alt="Cascading Tegalalang rice terraces in morning sunlight"
-          class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
-          src="https://lh3.googleusercontent.com/aida-public/AB6AXuCjsS9yeT587TsaNwtsSmv1RsoN-ZqFeEhzMJcGlz_CU9wTSYS927ftAFwRhMGYyqGIYKHFd5DTTZrrofY3XBmYgcz74y-e2M8hh-uAqjIDPKnIFgx4ZubPFu-r06lucpNuYCCD-l4JoSsCp0zXvtj4SWhMdM-1wCcfx-jS8naz-R6qu6I6VUO5ZFVVgNDWhQZiDOkH90yTTn_5M7MTX5p8EofdCVMXseiK1LxNkID4nlMme3QpQT1fmAvlJf_e77Lyjj5mCFB9pPQ"
-        />
-        <div class="absolute inset-0 bg-linear-to-t from-primary-container/80 via-transparent to-transparent"></div>
-        <div class="absolute bottom-8 left-8 right-8">
-          <span class="font-label text-primary-fixed uppercase tracking-widest text-xs mb-2 block">Our Commitment</span>
-          <h4 class="font-headline text-xl md:text-2xl text-on-primary">Preserving the Paradise</h4>
-        </div>
-      </div>
-
-      <!-- Content -->
-      <div data-aos="fade-left" data-aos-delay="100" class="space-y-8 md:space-y-10">
-        <div>
-          <h2 class="font-headline text-3xl md:text-5xl text-primary leading-tight mb-6">Why Sustainable?</h2>
-          <p class="font-body text-base md:text-lg text-on-surface-variant font-light leading-relaxed">
-            We believe travel should be a force for good. Sustainability isn't just a buzzword for us;
-            it's the foundation of every itinerary we design.
-          </p>
-        </div>
-
-        <div class="space-y-6 md:space-y-8">
-          {pillars.map((p, i) => (
-            <div data-aos="fade-up" data-aos-delay={String(i * 80)} class="flex gap-5 md:gap-6 items-start">
-              <div class="bg-primary-fixed/30 p-4 rounded-full text-primary shrink-0">
-                <span class="material-symbols-outlined">{p.icon}</span>
-              </div>
-              <div>
-                <h4 class="font-headline text-lg md:text-xl text-primary mb-2">{p.title}</h4>
-                <p class="font-body text-on-surface-variant font-light">{p.description}</p>
-              </div>
-            </div>
-          ))}
-        </div>
-
-        <a
-          href="/contact"
-          data-aos="fade-up"
-          data-aos-delay="240"
-          class="inline-flex items-center gap-2 bg-primary text-on-primary font-label text-xs uppercase tracking-widest font-bold px-8 py-4 rounded-full hover:scale-[1.02] transition-transform duration-300 shadow-[0_10px_20px_rgba(21,66,18,0.2)]"
-        >
-          Start Your Journey
-          <span class="material-symbols-outlined text-lg">arrow_forward</span>
-        </a>
-      </div>
-
+    <div data-aos="fade-up" class="text-center mb-16 md:mb-20 max-w-3xl mx-auto">
+      <span class="font-label text-secondary uppercase tracking-widest text-sm block mb-4">Why Choose Us</span>
+      <h2 class="font-headline text-3xl md:text-5xl text-primary leading-tight mb-6">
+        Why Experience with BBM Tours?
+      </h2>
+      <p class="font-body text-base md:text-lg text-on-surface-variant font-light leading-relaxed">
+        BBM Tours gives you an unexpected journey with a whole experience in the destination. Our priorities are delivering quality warm hospitality, services, experiences, and comfort to bring out the best from every destination.
+      </p>
     </div>
+
+    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8 mb-16 md:mb-20">
+      {pillars.map((p, i) => (
+        <div data-aos="fade-up" data-aos-delay={String((i % 3) * 80)} class="bg-surface-container-lowest rounded-lg p-6 md:p-8 shadow-[0_20px_40px_rgba(26,28,27,0.04)] border border-outline-variant/10 flex flex-col gap-4">
+          <div class="w-12 h-12 bg-primary-fixed/30 rounded-full flex items-center justify-center shrink-0">
+            <span class="material-symbols-outlined text-primary">{p.icon}</span>
+          </div>
+          <h4 class="font-headline text-lg md:text-xl text-primary">{p.title}</h4>
+          <p class="font-body text-on-surface-variant font-light text-sm leading-relaxed">{p.description}</p>
+        </div>
+      ))}
+    </div>
+
+    <div data-aos="fade-up" class="text-center">
+      <a
+        href="/contact"
+        class="inline-flex items-center gap-2 bg-primary text-on-primary font-label text-xs uppercase tracking-widest font-bold px-8 py-4 rounded-full hover:scale-[1.02] transition-transform duration-300 shadow-[0_10px_20px_rgba(21,66,18,0.2)]"
+      >
+        Start Your Journey
+        <span class="material-symbols-outlined text-lg">arrow_forward</span>
+      </a>
+    </div>
+
   </div>
 </section>

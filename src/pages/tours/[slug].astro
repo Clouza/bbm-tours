@@ -1,0 +1,158 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import Navbar from '../../components/Navbar.astro';
+import Footer from '../../components/Footer.astro';
+import TourDetailHero from '../../components/tours/TourDetailHero.astro';
+import TourItinerary from '../../components/tours/TourItinerary.astro';
+import BookingWidget from '../../components/tours/BookingWidget.astro';
+import tours from '../../data/tours.json';
+
+export async function getStaticPaths() {
+  return tours.map((tour) => ({
+    params: { slug: tour.slug },
+    props: { tour },
+  }));
+}
+
+const { tour } = Astro.props;
+
+// Map itinerary to component format
+const formattedItinerary = tour.itinerary.map((item) => {
+  const time = 'time' in item ? item.time : 'day' in item ? item.day : 'Activity';
+  const activityText = 'activity' in item ? item.activity : '';
+  
+  // Try to extract a title from the activity text (e.g., split by dash or take first few words)
+  let title = '';
+  let description = activityText;
+  
+  if (activityText.includes(' - ')) {
+    [title, ...description] = activityText.split(' - ');
+    description = description.join(' - ');
+  } else if (activityText.includes(': ')) {
+    [title, ...description] = activityText.split(': ');
+    description = description.join(': ');
+  } else {
+    // Fallback: use the first 5 words as title
+    const words = activityText.split(' ');
+    title = words.slice(0, 5).join(' ') + '...';
+  }
+
+  return {
+    time,
+    title: title.charAt(0).toUpperCase() + title.slice(1),
+    description,
+    variant: 'default' as const,
+  };
+});
+
+// Map inclusions to icons
+const iconMap: Record<string, string> = {
+  guide: 'person',
+  lunch: 'restaurant',
+  dinner: 'restaurant',
+  breakfast: 'restaurant',
+  water: 'local_drink',
+  coconut: 'local_drink',
+  transfer: 'directions_car',
+  vehicle: 'directions_car',
+  accommodation: 'home',
+  homestay: 'home',
+  snack: 'bakery_dining',
+  bicycle: 'pedal_bike',
+  souvenir: 'featured_play_list',
+};
+
+const formattedInclusions = (tour.inclusions || []).map((inc) => {
+  const lowerInc = inc.toLowerCase();
+  let icon = 'check_circle';
+  
+  for (const [key, val] of Object.entries(iconMap)) {
+    if (lowerInc.includes(key)) {
+      icon = val;
+      break;
+    }
+  }
+  
+  return { icon, label: inc };
+});
+
+const gallery = [
+  { src: tour.image, alt: tour.title, col: 'col-span-12', h: 'h-80 md:h-96' },
+];
+---
+
+<Layout
+  title={`${tour.title} - BBM Tours & Travel`}
+  description={tour.short_description}
+>
+  <Navbar activePage="experiences" />
+
+  <TourDetailHero
+    image={tour.image}
+    alt={tour.title}
+    badge={tour.duration}
+    title={tour.title}
+    description={tour.short_description}
+  />
+
+  <main class="w-full max-w-screen-2xl mx-auto px-4 md:px-8 py-12 md:py-16 grid grid-cols-1 lg:grid-cols-12 gap-8 md:gap-16">
+    <!-- Left: Editorial Content -->
+    <div class="lg:col-span-8 flex flex-col gap-16 md:gap-24">
+
+      <!-- Overview -->
+      <section data-aos="fade-up" class="flex flex-col gap-5 md:gap-6">
+        <h2 class="font-headline text-3xl md:text-4xl text-primary font-semibold tracking-tight">Overview</h2>
+        <div class="font-body text-base md:text-lg text-on-surface-variant leading-relaxed space-y-5 md:space-y-6">
+          <p>{tour.description}</p>
+          {tour.exclusions && (
+             <div class="mt-8">
+                <h3 class="font-headline text-xl text-primary font-semibold mb-3">Exclusions</h3>
+                <ul class="list-disc list-inside space-y-2">
+                  {tour.exclusions.map((ex) => (
+                    <li class="text-on-surface-variant">{ex}</li>
+                  ))}
+                </ul>
+             </div>
+          )}
+        </div>
+      </section>
+
+      <!-- Gallery (Placeholder with main image) -->
+      <section data-aos="fade-up" class="flex flex-col gap-4 md:gap-6">
+        <h2 class="font-headline text-2xl md:text-3xl text-primary font-semibold tracking-tight">Glimpses of Your Journey</h2>
+        <div class="grid grid-cols-12 gap-3 md:gap-4">
+          {gallery.map((img, i) => (
+            <div data-aos="fade-up" data-aos-delay={String(i * 80)} class={`${img.col} ${img.h} rounded-lg overflow-hidden relative group`}>
+              <img alt={img.alt} class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" src={img.src} />
+            </div>
+          ))}
+        </div>
+      </section>
+
+      <TourItinerary items={formattedItinerary} />
+
+      <!-- Mobile Booking CTA -->
+      <div class="lg:hidden">
+        <a
+          href="#booking-widget"
+          class="block w-full text-center bg-secondary-container text-on-secondary-container py-4 rounded-xl font-label text-sm uppercase tracking-widest font-bold hover:scale-[1.02] transition-transform shadow-lg"
+        >
+          Book This Experience
+        </a>
+      </div>
+
+    </div>
+
+    <!-- Right: Sticky Booking Widget -->
+    <div class="lg:col-span-4">
+      <BookingWidget
+        priceFrom={`$${tour.price}`}
+        basePrice={tour.price}
+        inclusions={formattedInclusions}
+        whatsappNumber="6281238211110"
+      />
+    </div>
+  </main>
+
+  <Footer />
+</Layout>

@@ -59,7 +59,8 @@ const { priceFrom, basePrice, inclusions, whatsappNumber } = Astro.props;
       Book Now
     </button>
     <a
-      href={`https://wa.me/${whatsappNumber}`}
+      id="wa-inquire-btn"
+      href={`https://wa.me/${whatsappNumber}?text=Halo%20BBM%20Tours%2C%20saya%20ingin%20menanyakan%20tentang%20paket%20wisata%20ini.`}
       target="_blank"
       rel="noopener noreferrer"
       class="w-full bg-linear-to-br from-primary to-primary-container text-on-primary py-4 rounded-lg font-label text-sm uppercase tracking-widest font-bold hover:scale-[1.02] transition-transform flex justify-center items-center gap-2"
@@ -128,7 +129,15 @@ const { priceFrom, basePrice, inclusions, whatsappNumber } = Astro.props;
       setTimeout(() => dateInput?.classList.remove('ring-2', 'ring-red-400'), 2000);
       return;
     }
-    confirmDialog?.classList.replace('hidden', 'flex');
+    const lines = [
+      `Halo BBM Tours, saya ingin memesan tour ini.`,
+      ``,
+      `Tanggal: ${dateInput.value}`,
+      `Tamu: ${guests} orang`,
+      `Total: $${basePrice * guests}`,
+    ];
+    const waUrl = `https://wa.me/6281238211110?text=${encodeURIComponent(lines.join('\n'))}`;
+    window.open(waUrl, '_blank', 'noopener,noreferrer');
   });
 
   confirmClose?.addEventListener('click', () => confirmDialog?.classList.replace('flex', 'hidden'));

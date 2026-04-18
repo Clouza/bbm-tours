@@ -1,47 +1,74 @@
 ---
+const missions = [
+  'Customers Are No. 1.',
+  'Focus on special experiences in every destination.',
+  'Quality and services of our tour product will be prioritised to give a better experience for our customer.',
+  'We offer Indonesia authentic destinations & authentic places around the world.',
+  'We commit to make Indonesia tourism worldwide & change the perspective of domestic travelers to prioritise Indonesia for their holiday destination.',
+  'Become No. 1 lifestyle travel in Indonesia.',
+];
 ---
 
 <section class="py-24 md:py-32 px-4 md:px-8 bg-surface">
-  <div class="max-w-screen-2xl mx-auto">
+  <div class="max-w-screen-2xl mx-auto space-y-24 md:space-y-32">
+
+    <!-- Our Story -->
     <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 md:gap-16">
-      <!-- Story -->
       <div data-aos="fade-right" class="lg:col-span-7 flex flex-col justify-center space-y-8 pr-0 lg:pr-12">
-        <span class="font-label text-secondary uppercase tracking-widest text-sm">The Genesis</span>
+        <span class="font-label text-secondary uppercase tracking-widest text-sm">Our Story</span>
         <h2 class="font-headline text-3xl md:text-5xl text-primary leading-tight">
-          Curating the unseen, preserving the sublime.
+          Bali Best Memory, Born in 2014.
         </h2>
         <div class="space-y-6 text-on-surface-variant font-body font-light leading-loose text-base md:text-lg">
           <p>
-            BBM Tours was born far from the boardroom—on an untrodden jungle trail where the air hummed with
-            the spirit of the island. We discovered that Bali's true luxury isn't found in crowded resorts,
-            but in rare, quiet encounters: the intoxicating scent of frangipani at first light, the distant
-            rhythm of gamelan echoing across emerald terraces, and the profound warmth of local artisans.
+            BBM Tour & Travel (PT. Bali Bagus Memmori Wisata) is a travel company based in Denpasar, Bali, Indonesia. Established in 2014, BBM — Bali Best Memory — Tours & Travel was founded with a single passion: to offer hospitality, places, and cultures through unforgettable experiences that bring out the best from every destination.
           </p>
           <p>
-            We established BBM Tours to offer these transformative experiences with uncompromising elegance
-            and responsibility. Our pioneering eco-tourism model guarantees that every bespoke journey not
-            only indulges the senses but fiercely protects the island's exquisite heritage for generations to come.
+            Giving unexpected journeys with whole experiences is at the heart of what we do. We believe there is no one who knows more about a destination than local tour operators — which is why our fundamental business model is built through genuine partnerships with local operators who share our values.
+          </p>
+          <p>
+            Through these partnerships, we continue to develop awareness of how travel can create a positive impact for tourism communities, preserving culture while uplifting the people who call these places home.
           </p>
         </div>
       </div>
 
-      <!-- Mission Card -->
+      <!-- Vision Card -->
       <div data-aos="fade-left" data-aos-delay="100" class="lg:col-span-5 relative">
-        <div class="bg-surface-container-lowest rounded-lg p-8 md:p-14 shadow-[0_20px_40px_rgba(26,28,27,0.06)] h-full flex flex-col justify-center relative overflow-hidden border border-outline-variant/15">
+        <div class="bg-surface-container-lowest rounded-lg p-8 shadow-[0_20px_40px_rgba(26,28,27,0.06)] flex flex-col relative overflow-hidden border border-outline-variant/15">
           <div class="absolute top-0 right-0 -mr-16 -mt-16 opacity-5 pointer-events-none select-none">
-            <span class="material-symbols-outlined" style="font-size:200px">eco</span>
+            <span class="material-symbols-outlined" style="font-size:200px">explore</span>
           </div>
-          <span class="material-symbols-outlined text-secondary-container text-4xl mb-6">volunteer_activism</span>
-          <h3 class="font-headline text-2xl md:text-3xl text-primary mb-4 italic">
-            "Elevated Experiences, Conscious Footprints"
+          <span class="material-symbols-outlined text-secondary-container text-4xl mb-6">visibility</span>
+          <span class="font-label text-secondary uppercase tracking-widest text-xs mb-3">Our Vision</span>
+          <h3 class="font-headline text-2xl md:text-3xl text-primary mb-4 italic leading-snug">
+            "An Unexpected Journey with a Whole Experience"
           </h3>
           <p class="font-body text-on-surface-variant leading-relaxed">
-            Our mission transcends traditional hospitality. We design exquisitely personalized, sustainable
-            travel narratives that honor the delicate local ecology and actively enrich the communities that
-            welcome us. Every curated itinerary is a masterclass in authentic, conscious connection.
+            A Tour & Travel that gives you unexpected journeys with a whole experience. We prioritise quality through warm hospitality, services, experiences, and comfort — to bring out the best from your destination.
           </p>
         </div>
       </div>
     </div>
+
+    <!-- Our Mission -->
+    <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 md:gap-16 items-start">
+      <div data-aos="fade-right" class="lg:col-span-5">
+        <span class="font-label text-secondary uppercase tracking-widest text-sm block mb-4">Our Mission</span>
+        <h2 class="font-headline text-3xl md:text-5xl text-primary leading-tight">
+          Committed to Making Every Journey Count.
+        </h2>
+      </div>
+      <div data-aos="fade-left" data-aos-delay="100" class="lg:col-span-7">
+        <ul class="space-y-4">
+          {missions.map((m, i) => (
+            <li data-aos="fade-up" data-aos-delay={String(i * 60)} class="flex items-start gap-4">
+              <span class="material-symbols-outlined text-secondary-container text-xl mt-0.5 shrink-0" style="font-variation-settings:'FILL' 1">check_circle</span>
+              <p class="font-body text-on-surface-variant font-light leading-relaxed">{m}</p>
+            </li>
+          ))}
+        </ul>
+      </div>
+    </div>
+
   </div>
 </section>

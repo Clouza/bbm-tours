@@ -121,7 +121,7 @@
     el.addEventListener('input', () => validateField(el as HTMLInputElement));
   });
 
-  form?.addEventListener('submit', async (e) => {
+  form?.addEventListener('submit', (e) => {
     e.preventDefault();
 
     let allValid = true;
@@ -130,20 +130,30 @@
     });
     if (!allValid) return;
 
-    // Show loading state
-    if (btnLabel) btnLabel.textContent = 'Sending...';
-    btnIcon?.classList.add('hidden');
-    btnSpinner?.classList.remove('hidden');
-    if (submitBtn) submitBtn.disabled = true;
+    const name    = (form.elements.namedItem('name')     as HTMLInputElement).value.trim();
+    const email   = (form.elements.namedItem('email')    as HTMLInputElement).value.trim();
+    const dates   = (form.elements.namedItem('dates')    as HTMLInputElement).value.trim();
+    const interest = (form.elements.namedItem('interest') as HTMLSelectElement).value;
+    const message = (form.elements.namedItem('message')  as HTMLTextAreaElement).value.trim();
 
-    // Simulate async submission (replace with real API call)
-    await new Promise((r) => setTimeout(r, 1200));
+    const interestLabel: Record<string, string> = {
+      cultural: 'Cultural Immersion',
+      eco: 'Eco & Sustainability',
+      luxury: 'Luxury Retreat',
+      custom: 'Custom Itinerary',
+    };
 
-    // Show success
-    form.classList.add('hidden');
-    if (success) {
-      success.classList.remove('hidden');
-      success.classList.add('flex');
-    }
+    const lines = [
+      `Halo BBM Tours, saya ingin menanyakan tentang paket wisata Anda.`,
+      ``,
+      `Nama: ${name}`,
+      `Email: ${email}`,
+      dates   ? `Tanggal: ${dates}` : '',
+      interest ? `Minat: ${interestLabel[interest] ?? interest}` : '',
+      message ? `Pesan: ${message}` : '',
+    ].filter(Boolean);
+
+    const waUrl = `https://wa.me/6281238211110?text=${encodeURIComponent(lines.join('\n'))}`;
+    window.open(waUrl, '_blank', 'noopener,noreferrer');
   });
 </script>
