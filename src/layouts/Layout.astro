@@ -43,6 +43,15 @@ const {
   <body>
     <slot />
   </body>
+  <script src="https://chattrick.id/widget.js" defer is:inline></script>
+  <script is:inline>
+    window["chattrick"] = {
+      botId: "0639a4b5-ab49-4f32-b642-911527275093",
+      apiBaseUrl: "https://api.chattrick.id",
+      renderMode: "chatbubble",
+      initialMessage: "",
+    };
+  </script>
 </html>
 
 <script>
