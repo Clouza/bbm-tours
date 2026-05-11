@@ -1,311 +1,256 @@
 [
   {
-    "id": "salak-agro-jeep-sunrise",
-    "slug": "salak-agro-jeep-sunrise",
-    "title": "Salak Agro Jeep Sunrise",
-    "duration": "1 Day",
-    "location": "Bali",
-    "category": "Adventure",
-    "price": 70.00,
-    "image": "https://bbmtours.com/packages/img/imagegallery1583216460.jpg",
-    "short_description": "Discovery amazing sunrise view points in Bali without climbing, just sit down on the classic 4WD car to the hill top.",
-    "description": "Discovery amazing sunrise view points in Bali. Without climbing, just sit down on the classic 4WD car to the hill top (approximately 1.200m above sea level). When the weather are clear, enjoy the beautiful sunrise view of the eastern edge of Bali island, the huge of Mount Agung and the beauty silhouette of Mount Rinjani in Lombok. Followed by campfire - picnic breakfast. Driving back down the hill to explore, feel the harvesting sensation and direct consuming Salak fruits from the tree.",
-    "itinerary": [
-      {
-        "time": "04:00",
-        "activity": "Arrive at our base camp, classic 4WD car ready for the jeep Sunrise activities."
-      },
-      {
-        "time": "04:30",
-        "activity": "The journey will begin in the morning and pass through the plantations, bamboo forests. A little rocky and climbing road allows a sensation of natural adventure sensations."
-      },
-      {
-        "time": "05:00",
-        "activity": "Start with the campfire and set the typical picnic breakfast. Enjoy the fresh air on the hilltop and the beauty of nature at the turn of the night and sunrise. When the weather are clear, enjoy the beautiful sunrise view of the eastern edge of Bali island, the huge of Mount Agung and the beauty silhouette of Mount Rinjani in Lombok. Followed by campfire - picnic breakfast. Trekking surround the hill top."
-      },
-      {
-        "time": "08:00",
-        "activity": "Explore, feel the harvesting sensation and direct consuming the Salak Fruits from the largest plantation in Bali."
-      }
-    ],
+    "id": "south-bali-full-day-tour",
+    "slug": "south-bali-full-day-tour",
+    "title": "South Bali Full Day Tour",
+    "duration": "Full Day",
+    "participants": "2 pax minimum",
+    "location": "Uluwatu Temple, Garuda Wisnu Kencana (GWK), Pantai Melasti",
+    "category": "Cultural & Historical",
+    "price": 1300000,
+    "image": "/images/south-bali-full-day-tour.png",
+    "short_description": "Tour visiting Garuda Wisnu Kencana Cultural Park to see sculptures and art performances, continuing to Uluwatu Temple for cliff architecture and Kecak performances.",
+    "description": "Tour visiting Garuda Wisnu Kencana Cultural Park to see sculptures and art performances, continuing to Uluwatu Temple for cliff architecture and Kecak performances, and ending at Melasti Beach to enjoy the view of the beach and limestone cliffs.",
+    "itinerary": [],
     "inclusions": [
-      "Guide",
-      "Lunch",
-      "Mineral Water",
-      "Fresh young coconut",
-      "Return hotel transfer with air-conditioned van",
-      "Classic 4WD vehicle"
+      "Food",
+      "Transport"
     ],
-    "exclusions": [
-      "Alcohol",
-      "Any additional tours",
-      "Transportation to the pick-up point",
-      "Tipping for local guide, tour leader",
-      "Any personal expenses"
-    ]
+    "exclusions": []
   },
   {
-    "id": "salak-agro-eco-trekking",
-    "slug": "salak-agro-eco-trekking",
-    "title": "Salak Agro Eco Trekking",
-    "duration": "1 Day",
-    "location": "Bali",
-    "category": "Adventure",
-    "price": 60.00,
-    "image": "https://bbmtours.com/packages/img/imagegallery1626856171.jpg",
-    "short_description": "Explore the largest Salak plantation in Bali island, rice field and the traditional Sibetan village.",
-    "description": "Explore the largest Salak plantation in Bali island, rice field and the traditional Sibetan village. The village that still keep the good environment and develops sustainable local culture and self help farming system based on the natural ecosystem. Approximately 2-3 hours trekking to the Salak plantation and interact with the local to visit their house with the daily activities including the traditional wine process.",
-    "itinerary": [
-      {
-        "time": "08:00",
-        "activity": "Pick Up - Hotel pick up services depend on the hotel location."
-      },
-      {
-        "time": "09:00 - 13:00",
-        "activity": "Walk into the rice fields - Depend on the season, sometimes there is the possibility to interact with the farmer, while caring, plowing or harvest in plantation. Explore the largest Salak plantations and traditional villages at Sibetan village in the east Bali island. Harvesting and taste the Salak fruits from the tree. Also, see the traditional wine-making process. During the trek, the local community will be presented a young fresh coconut to freshen stamina."
-      },
-      {
-        "time": "13:00 - 13:30",
-        "activity": "Lunch - Typical lunch will presented at local restaurant."
-      }
-    ],
+    "id": "jeep-sunrise-tour-with-hotspring",
+    "slug": "jeep-sunrise-tour-with-hotspring",
+    "title": "Jeep Sunrise Tour with Hotspring",
+    "duration": "Full Day (pickup 02:30 AM)",
+    "participants": "3 pax minimum",
+    "location": "Gunung Batur, Hot Water Spring",
+    "category": "Nature – Adventure – Relax",
+    "price": 2550000,
+    "image": "/images/jeep-sunrise-tour-with-hotspring.png",
+    "short_description": "Early morning pickup from hotel heading to the meeting point for a 4WD Jeep Sunrise Tour on volcanic slopes of Mount Batur.",
+    "description": "Early morning pickup from hotel heading to the meeting point for a 4WD Jeep Sunrise Tour on volcanic slopes of Mount Batur. After watching the sunrise, enjoy an off-road drive through black lava fields. Then visit the Natural Hotspring Pool to soak in mineral-rich volcanic hot water with mountain and lake views. Ends with lunch at a local restaurant before returning to hotel.",
+    "itinerary": [],
     "inclusions": [
-      "Guide",
-      "Lunch",
-      "Mineral Water",
-      "Fresh young coconut",
-      "Return hotel transfer with air-conditioned van"
+      "Food",
+      "Attractions",
+      "Transport"
     ],
-    "exclusions": [
-      "Alcohol",
-      "Any additional tours",
-      "Transportation to the pick-up point",
-      "Tipping for local guide, tour leader",
-      "Any personal expenses"
-    ]
+    "exclusions": []
   },
   {
-    "id": "glamping-cooking-bonfire",
-    "slug": "glamping-cooking-bonfire",
-    "title": "Glamping and Cooking with Enjoying Bonfire",
-    "duration": "3 Days/ 2 Nights",
-    "location": "Bali",
-    "category": "Wellness",
-    "price": 110.00,
-    "image": "https://bbmtours.com/packages/img/1.png",
-    "short_description": "Enjoy glamping in a quiet place with green views on a cliff, including coffee plantation tours and cooking Balinese chicken.",
-    "description": "Enjoy a unique glamping experience in a quiet place with green views on a cliff, surrounded by coffee and fruit plantations. Participate in cycling, cooking chicken with Balinese spices in bamboo, and hunting Luwak at night.",
+    "id": "north-bali-full-day-tour",
+    "slug": "north-bali-full-day-tour",
+    "title": "North Bali Full Day Tour",
+    "duration": "Full Day",
+    "participants": "2 pax minimum",
+    "location": "Lovina Beach, Bedugul (Ulun Danu Temple, Banyumala Waterfall)",
+    "category": "Nature & Adventure",
+    "price": 2000000,
+    "image": "/images/north-bali-full-day-tour.png",
+    "short_description": "The tour begins at Lovina Beach to observe dolphins at sunrise, followed by a road trip to Beratan Lake to visit Ulun Danu Temple.",
+    "description": "The tour begins at Lovina Beach to observe dolphins at sunrise, followed by a road trip to Beratan Lake to visit Ulun Danu Temple. The trip then continues to Banyumala Waterfall as the final destination before the tour ends.",
+    "itinerary": [],
+    "inclusions": [
+      "Food",
+      "Attractions",
+      "Transport"
+    ],
+    "exclusions": []
+  },
+  {
+    "id": "nature-trail-atv-experience",
+    "slug": "nature-trail-atv-experience",
+    "title": "Nature Trail ATV Experience",
+    "duration": "Full Day",
+    "participants": "2 pax minimum",
+    "location": "Bongkasa Pertiwi",
+    "category": "Fun & Adventure",
+    "price": 1650000,
+    "image": "/images/nature-trail-atv-experience.png",
+    "short_description": "Ride through Bali's landscapes, explore hidden trails, and feel the thrill of off-road exploration on a guided ATV tour.",
+    "description": "Ride through Bali's landscapes, explore hidden trails, and feel the thrill of off-road exploration on a guided ATV tour. Price includes lunch, photo & video during the ATV ride, and return transfer.",
+    "itinerary": [],
+    "inclusions": [
+      "Food",
+      "Attractions",
+      "Transport"
+    ],
+    "exclusions": []
+  },
+  {
+    "id": "one-day-balinese-authentic-experience",
+    "slug": "one-day-balinese-authentic-experience",
+    "title": "One Day Balinese Authentic Experience",
+    "duration": "Full Day",
+    "participants": "2 pax minimum",
+    "location": "Desa Wisata Undisan",
+    "category": "Nature – Education – Cultural – Historical",
+    "price": 2650000,
+    "image": "/images/one-day-balinese-authentic-experience.png",
+    "short_description": "Journey begins at Rumah Bali, a traditional compound built on the philosophy of Asta Kosala Kosali.",
+    "description": "Journey begins at Rumah Bali, a traditional compound built on the philosophy of Asta Kosala Kosali. Activities include making traditional offerings (canang), a healing and meditation session, a Balinese cooking class at D'Karang Eco Lodge (learning to make sate lilit), and concludes with an authentic Balinese lunch.",
+    "itinerary": [],
+    "inclusions": [
+      "Food",
+      "Transport",
+      "Hidden Gem Attraction",
+      "Hidden Gem Destination"
+    ],
+    "exclusions": []
+  },
+  {
+    "id": "3d2n-authentic-balinese-experience",
+    "slug": "3d2n-authentic-balinese-experience",
+    "title": "3D2N An Authentic Balinese Experience",
+    "duration": "3 Days / 2 Nights",
+    "participants": "2 pax minimum",
+    "location": "Desa Wisata Guliang Kangin, Desa Wisata Penglipuran, Desa Wisata Undisan",
+    "category": "Nature – Education – Cultural – Religion",
+    "price": 8000000,
+    "image": "/images/3d2n-authentic-balinese-experience.png",
+    "short_description": "An immersive 3-day authentic Balinese experience covering spiritual healing, village trekking, heritage cycling, and cultural activities.",
+    "description": "Day 1: Spiritual healing & blessing at Guliang Village (palm reading, canang making, farming activities). Lunch, then visit Penglipuran Village. Evening cooking class (Satay Lilit) and dinner at D'Karang Eco Lodge. Overnight at D'Karang. Day 2: Traditional breakfast, village trekking (Balinese compound, blacksmith, Tangkup Waterfall). Lunch, then zipline activity and laklak cake making. Dinner and overnight at D'Karang. Day 3: Traditional breakfast, heritage cycling through pine forest with stops at knife smith, Luwak Coffee plantation, and citrus plantation. Lunch, then transfer out.",
     "itinerary": [
       {
         "day": "Day 1",
-        "time": "09:00",
-        "activity": "Glamping Activity - Pick up and start to enjoy the glamping activity. The glamping area is located in a quiet place with green views on a cliff, surrounded by a coffee plantation and various fruit trees."
+        "activity": "Spiritual healing & blessing at Guliang Village (palm reading, canang making, farming activities). Lunch, then visit Penglipuran Village. Evening cooking class (Satay Lilit) and dinner at D'Karang Eco Lodge. Overnight at D'Karang."
       },
       {
         "day": "Day 2",
-        "time": "09:00",
-        "activity": "Cycling & Cooking - Have a cycling tour, taste Luwak Coffee, and in the evening, cook chicken with Balinese spices in bamboo. Enjoy the bonfire and dinner together, followed by Luwak hunting at night."
+        "activity": "Traditional breakfast, village trekking (Balinese compound, blacksmith, Tangkup Waterfall). Lunch, then zipline activity and laklak cake making. Dinner and overnight at D'Karang."
       },
       {
         "day": "Day 3",
-        "time": "09:00",
-        "activity": "Cooking Activity - Making traditional breakfast (boiled cassava with honey and Luwak coffee). Transfer back to the next destination."
+        "activity": "Traditional breakfast, heritage cycling through pine forest with stops at knife smith, Luwak Coffee plantation, and citrus plantation. Lunch, then transfer out."
       }
     ],
     "inclusions": [
-      "Guide",
-      "Breakfast, Lunch, Dinner",
-      "Mineral Water",
-      "Welcome drink",
-      "Snack"
+      "3-Star Hotel",
+      "Food",
+      "Attractions",
+      "Transport",
+      "Hidden Gem Attraction",
+      "Hidden Gem Destination"
     ],
-    "exclusions": [
-      "Alcohol",
-      "Any additional tours",
-      "Tipping for local guide, tour leader",
-      "Any personal expenses"
-    ]
+    "exclusions": []
   },
   {
-    "id": "amazing-blue-paradise",
-    "slug": "amazing-blue-paradise",
-    "title": "The Amazing of Blue Paradise",
+    "id": "salak-agro-jeep-village-trail",
+    "slug": "salak-agro-jeep-village-trail",
+    "title": "Salak Agro Jeep Village Trail",
     "duration": "1 Day",
-    "location": "Nusa Penida, Bali",
-    "category": "Adventure",
-    "price": 145.00,
-    "image": "https://bbmtours.com/packages/img/zi1o8dvuzvnhirupzzle.jpg",
-    "short_description": "Discover the incredible West Nusa Penida, visiting Kelingking Beach, Angel's Billabong, Broken Beach, and more.",
-    "description": "Discover the incredible beauty of West Nusa Penida. Visit iconic spots like Kelingking Beach, Angel's Billabong, and Broken Beach. Experience snorkeling and sea walking to explore the rich marine life of Nusa Penida.",
-    "itinerary": [
-      {
-        "time": "09:30 - 10:00",
-        "activity": "Kelingking Beach: Visit the T-Rex shaped cliff side at Kelingking Beach, one of the most famous spots on the South West coast of Nusa Penida."
-      },
-      {
-        "time": "10:00 - 11:00",
-        "activity": "Angel's Billabong: Explore the crystal-clear tide pool on the west coast of Nusa Penida."
-      },
-      {
-        "time": "11:00 - 13:00",
-        "activity": "Broken Beach: An incredible little cove with a natural arch on Nusa Penida island."
-      },
-      {
-        "time": "13:00 - 13:30",
-        "activity": "Snorkeling Activity - Snorkeling to watch beautiful fish and marine biota in very clear water."
-      },
-      {
-        "time": "14:00 - 15:30",
-        "activity": "Sea Walker - Unique undersea walking experience to discover the underwater world safely."
-      }
-    ],
+    "participants": "2 pax minimum",
+    "location": "Agro Wisata Kebun Salak Sibetan",
+    "category": "Nature – Agriculture – Adventure",
+    "price": 2800000,
+    "image": "/images/salak-agro-jeep-village-trail.png",
+    "short_description": "Ride a classic 4WD car to explore the beauty of East Bali from one of its highest hills.",
+    "description": "Ride a classic 4WD car to explore the beauty of East Bali from one of its highest hills. Pass through rural areas, interact with locals, then explore, harvest, and taste salak fruit at Bali's largest plantation. Visit locals to witness traditional wine-making and enjoy a coffee break.",
+    "itinerary": [],
     "inclusions": [
-      "Guide",
-      "Transportation with A/C",
-      "Lunch",
-      "Dinner",
-      "Mineral Water",
-      "Welcome drink",
-      "Snack"
+      "Food",
+      "Attractions",
+      "Transport",
+      "Hidden Gem Destination"
     ],
-    "exclusions": [
-      "Alcohol",
-      "Any additional tours",
-      "Transportation to the pick-up point",
-      "Tipping for local guide, tour leader",
-      "Any personal expenses"
-    ]
+    "exclusions": []
   },
   {
-    "id": "collect-memories-undisan",
-    "slug": "collect-memories-undisan",
-    "title": "Collect Memories in Undisan Village",
-    "duration": "1 Day",
-    "location": "Undisan Village, Bali",
-    "category": "Culture",
-    "price": 79.00,
-    "image": "https://bbmtours.com/packages/img/Undisan-Tourist-Village.jpg",
-    "short_description": "Learn to cook and follow the daily activities of Balinese people in the charming Undisan Village.",
-    "description": "The activities that you follow this tour will be taught to learn to cook and follow the daily activities of Balinese people. Journeys and programs are particularly varied: rice fields, waterfall, temples, villages, and a trek traversing the preserved forest of the island.",
-    "itinerary": [
-      {
-        "time": "09:30 - 10:00",
-        "activity": "Trekking & Farming - Walking through rice paddies and participating in farming activities like cultivating the rice field using cows. Enjoy traditional refreshments afterward."
-      },
-      {
-        "time": "10:00 - 11:00",
-        "activity": "Tangkup Waterfall - Visit a quiet and small waterfall while trekking around the village."
-      },
-      {
-        "time": "11:00 - 13:00",
-        "activity": "Cooking Lesson - Experiencing how to cook Balinese cuisine in a traditional local house."
-      },
-      {
-        "time": "13:00 - 13:30",
-        "activity": "Making Coconut Oil - Learn the traditional process of making coconut oil from scratch using firewood."
-      }
-    ],
+    "id": "thrilling-ayung-river-rafting-adventure",
+    "slug": "thrilling-ayung-river-rafting-adventure",
+    "title": "Thrilling Ayung River Rafting Adventure",
+    "duration": "Full Day",
+    "participants": "2 pax minimum",
+    "location": "Lembah Sungai Ayung",
+    "category": "Sport – Adventure",
+    "price": 1450000,
+    "image": "/images/thrilling-ayung-river-rafting-adventure.png",
+    "short_description": "An exciting rafting adventure through the rapids of Ayung River surrounded by lush natural scenery.",
+    "description": "An exciting rafting adventure through the rapids of Ayung River surrounded by lush natural scenery. Suitable for all levels. Includes a safety briefing, all safety gear, and lunch after the experience. Hotel pickup available from Nusa Dua, Kuta, Seminyak, Sanur, and Ubud areas.",
+    "itinerary": [],
     "inclusions": [
-      "Guide",
-      "Lunch",
-      "Mineral Water",
-      "Welcome drink",
-      "Snack"
+      "Food",
+      "Attractions",
+      "Transport"
     ],
-    "exclusions": [
-      "Alcohol",
-      "Any additional tours",
-      "Transportation to the pick-up point",
-      "Tipping for local guide, tour leader",
-      "Any personal expenses"
-    ]
+    "exclusions": []
   },
   {
-    "id": "community-base-tourism",
-    "slug": "community-base-tourism",
-    "title": "Community Base Tourism Activity",
-    "duration": "3 Days/ 2 Nights",
-    "location": "Undisan Village, Bali",
-    "category": "Culture",
-    "price": 130.00,
-    "image": "https://bbmtours.com/packages/img/IMG_20220428_211850.jpg",
-    "short_description": "An immersive 3-day experience staying in local homes and participating in traditional Balinese village activities.",
-    "description": "The trip to Undisan Village will take you to the heart of Balinese culture while following the curved tracks, traversing the remote villages, and exploring the sites well preserved from the touristy industry. Stay in local homes, learn to cook, and participate in daily activities together with local residents.",
-    "itinerary": [
-      {
-        "day": "DAY 1",
-        "activity": "Upon arrival at Undisan Village, participate in a cooking lesson and stay in a traditional Balinese house compound."
-      },
-      {
-        "day": "DAY 2",
-        "activity": "Full day rural activities: visit the village school, short trekking through rice paddies, visit a natural waterfall, participate in farming, and learn how to make coconut oil."
-      },
-      {
-        "day": "DAY 3",
-        "activity": "Morning breakfast at the home stay and transfer out to the next destination."
-      }
-    ],
+    "id": "west-coast-nusa-penida-one-day-trip",
+    "slug": "west-coast-nusa-penida-one-day-trip",
+    "title": "West Coast Nusa Penida One Day Trip",
+    "duration": "Full Day",
+    "participants": "2 pax minimum",
+    "location": "Pantai Kelingking dan Paluang, Pantai Uwug (Broken Beach), Angel's Billabong, Pantai Segara Penida (Crystal Bay)",
+    "category": "Nature – Adventure – Leisure",
+    "price": 2650000,
+    "image": "/images/west-coast-nusa-penida-one-day-trip.png",
+    "short_description": "Full-day trip to West Nusa Penida including return fast boat from Sanur, private car with driver-guide, and all entrance fees.",
+    "description": "Full-day trip to West Nusa Penida including return fast boat from Sanur, private car with driver-guide on the island, lunch at a local restaurant, and all entrance fees. Visits Kelingking Beach, Broken Beach, Angel's Billabong, and Crystal Bay. Hotel pickup from Sanur, Kuta, Legian, or Seminyak. Adding more guests may reduce cost per person.",
+    "itinerary": [],
     "inclusions": [
-      "Accommodation (Home stay)",
-      "Meals (B, L, D as specified)",
-      "Guide",
-      "Village activities"
+      "Food",
+      "Attractions",
+      "Transport"
     ],
-    "exclusions": [
-      "Alcohol",
-      "Any additional tours",
-      "Any personal expenses"
-    ]
+    "exclusions": []
   },
   {
-    "id": "munggu-culture-cycling",
-    "slug": "munggu-culture-cycling",
-    "title": "Munggu Culture Cycling",
-    "duration": "1 Day",
-    "location": "Munggu, Bali",
-    "category": "Culture",
-    "price": 69.00,
-    "image": "https://bbmtours.com/packages/img/uJ9CqXZht5j39te3Q6rym3nNaAcbE7pXcIeSJDvU.jpg",
-    "short_description": "Learn Gamelan and Balinese dance before cycling to the beautiful Munggu Beach.",
-    "description": "A cultural journey starting at Warung Sawah Bali, visiting Royal Palace Griya Sidemen Pemaron, learning traditional Gamelan and Balinese dance, and concluding with a scenic cycling trip to Munggu Beach.",
+    "id": "sunrise-trekking-tour-with-hotspring",
+    "slug": "sunrise-trekking-tour-with-hotspring",
+    "title": "Sunrise Trekking Tour with Hotspring",
+    "duration": "Full Day",
+    "participants": "2 pax minimum",
+    "location": "Gunung Batur, Kintamani",
+    "category": "Natural – Nautical – Fun – Adventure",
+    "price": 1800000,
+    "image": "/images/sunrise-trekking-tour-with-hotspring.png",
+    "short_description": "Trek to the summit of Mount Batur to enjoy the sunrise and breakfast at the crater.",
+    "description": "Trek to the summit of Mount Batur to enjoy the sunrise and breakfast at the crater. Continue to Banjar Hot Spring to soak in natural hot water with scenic mountain views. Includes time to walk around the crater and rest at the pool area.",
+    "itinerary": [],
+    "inclusions": [
+      "Attractions",
+      "Transport"
+    ],
+    "exclusions": []
+  },
+  {
+    "id": "ancient-spirit-of-bali-4d3n",
+    "slug": "ancient-spirit-of-bali-4d3n",
+    "title": "The Ancient Spirit of Bali — 4D3N Spiritual & Cultural Odyssey",
+    "duration": "4 Days / 3 Nights",
+    "participants": "-",
+    "location": "D'Karang Ecolodge (Desa Wisata Undisan), Penglipuran Village, Pancoran Alas Tapa Sacred Springs, Puncak Sari Temple",
+    "category": "Spiritual – Cultural – Wellness",
+    "price": "-",
+    "image": "https://images.unsplash.com/photo-1550407590-fe5359dd2b6d?q=80&w=687&auto=format&fit=crop",
+    "short_description": "A 4-day spiritual and cultural odyssey through ancient Bali, blending healing ceremonies, heritage activities, and immersive Balinese traditions.",
+    "description": "Day 1 – The Gateway to Ancient Bali: Guests are greeted with a vintage VW Safari. Visit Penglipuran Village and its bamboo forest, check in at D'Karang Ecolodge, cultural introduction session, heritage cooking class (base genep & sate lilit), bamboo tube cooking over open fire, communal dinner under the stars with live suling music. Day 2 – Path of Purification & Wisdom: Sunrise yoga & meditation, communal breakfast, rice field trekking to Tangkup Waterfall, fresh coconut & fruit refreshment, artisan gold/metal smithing visit, Megibung communal lunch, Melukat water purification ceremony at Pancoran Alas Tapa led by a local priest, farewell dinner. Day 3 – Peak of Serenity & Soul Fire: Sunrise yoga, heritage cycling tour through Undisan's rural landscape, lunch at Mahagiri with panoramic views of Mount Agung and rice terraces, healing herbal wisdom (Jamu), silent meditation at Puncak Sari Temple, Brahma Kwaca fire purification ritual at dusk, grand farewell feast with traditional Balinese dance performance. Day 4 – Soul Release & New Beginnings: Breathwork & trauma release meditation, sound healing with sacred instruments, laklak (Balinese rice pancake) craft class, gamelan introduction session, departure.",
     "itinerary": [
       {
-        "time": "09:30 - 10:00",
-        "activity": "Gather at Warung Sawah Bali."
+        "day": "Day 1 – The Gateway to Ancient Bali",
+        "activity": "Guests are greeted with a vintage VW Safari. Visit Penglipuran Village and its bamboo forest, check in at D'Karang Ecolodge, cultural introduction session, heritage cooking class (base genep & sate lilit), bamboo tube cooking over open fire, communal dinner under the stars with live suling music."
       },
       {
-        "time": "10:00 - 11:00",
-        "activity": "Visit Royal Palace Griya Sidemen Pemaron."
+        "day": "Day 2 – Path of Purification & Wisdom",
+        "activity": "Sunrise yoga & meditation, communal breakfast, rice field trekking to Tangkup Waterfall, fresh coconut & fruit refreshment, artisan gold/metal smithing visit, Megibung communal lunch, Melukat water purification ceremony at Pancoran Alas Tapa led by a local priest, farewell dinner."
       },
       {
-        "time": "11:00 - 13:00",
-        "activity": "Learn traditional Gamelan and Balinese Dance."
+        "day": "Day 3 – Peak of Serenity & Soul Fire",
+        "activity": "Sunrise yoga, heritage cycling tour through Undisan's rural landscape, lunch at Mahagiri with panoramic views of Mount Agung and rice terraces, healing herbal wisdom (Jamu), silent meditation at Puncak Sari Temple, Brahma Kwaca fire purification ritual at dusk, grand farewell feast with traditional Balinese dance performance."
       },
       {
-        "time": "13:30 - 14:30",
-        "activity": "Lunch at Warung Sawah Bali."
-      },
-      {
-        "time": "14:30 - 16:00",
-        "activity": "Cycling to Munggu Beach."
-      },
-      {
-        "time": "16:00 - 18:00",
-        "activity": "Explore and enjoy Munggu Beach."
+        "day": "Day 4 – Soul Release & New Beginnings",
+        "activity": "Breathwork & trauma release meditation, sound healing with sacred instruments, laklak (Balinese rice pancake) craft class, gamelan introduction session, departure."
       }
     ],
     "inclusions": [
-      "Guide",
-      "Lunch",
-      "Bicycle and helmet",
-      "Gamelan and Balinese Dance instructor",
-      "Kemben and scarf",
-      "Welcome drink",
-      "Snack",
-      "Souvenir"
+      "Accommodation at D'Karang Ecolodge",
+      "All Meals",
+      "Transport",
+      "All Activities & Ceremonies Listed Above"
     ],
-    "exclusions": [
-      "Transportation to Munggu Village"
-    ]
+    "exclusions": []
   }
 ]

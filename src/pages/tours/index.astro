@@ -9,7 +9,7 @@ import tours from '../../data/tours.json';
 
 const formattedTours = tours.map((tour, index) => ({
   ...tour,
-  formattedPrice: `$${tour.price.toFixed(2)}`,
+  formattedPrice: typeof tour.price === 'number' ? `IDR ${tour.price.toLocaleString('id-ID')}` : tour.price,
   aosDelay: (index % 3 * 100).toString(),
 }));
 ---
@@ -46,7 +46,7 @@ const formattedTours = tours.map((tour, index) => ({
                 alt={tour.title}
                 duration={tour.duration}
                 title={tour.title}
-                price={`$${tour.price.toFixed(2)}`}
+                price={tour.formattedPrice}
                 description={tour.short_description}
                 href={`/tours/${tour.slug}`}
                 aosDelay={tour.aosDelay}
@@ -96,7 +96,7 @@ const formattedTours = tours.map((tour, index) => ({
 
   function updateDisplay() {
     const categories = Array.from(document.querySelectorAll('.filter-checkbox[data-checked="true"]'))
-      .map(cb => cb.parentElement?.querySelector('span')?.textContent?.trim());
+      .map(cb => (cb.nextElementSibling as HTMLElement)?.textContent?.trim());
     
     const duration = document.querySelector('.filter-radio[data-selected="true"]')?.parentElement?.querySelector('span')?.textContent?.trim();
     
@@ -105,11 +105,12 @@ const formattedTours = tours.map((tour, index) => ({
     filteredItems = tourItems.filter(item => {
       const itemCat = item.dataset.category;
       const itemDur = item.dataset.duration;
-      const itemPrice = parseFloat(item.dataset.price || '0');
+      const rawPrice = item.dataset.price;
+      const itemPrice = rawPrice ? parseFloat(rawPrice) : NaN;
 
       const catMatch = categories.length === 0 || (itemCat && categories.includes(itemCat));
       const durMatch = !duration || duration === 'All' || itemDur === duration;
-      const priceMatch = itemPrice <= maxPrice;
+      const priceMatch = isNaN(itemPrice) || itemPrice <= maxPrice;
 
       return catMatch && durMatch && priceMatch;
     });

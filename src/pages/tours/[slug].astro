@@ -18,7 +18,7 @@ const { tour } = Astro.props;
 
 // Map itinerary to component format
 const formattedItinerary = tour.itinerary.map((item) => {
-  const time = 'time' in item ? item.time : 'day' in item ? item.day : 'Activity';
+  const time = String('time' in item ? item.time : 'day' in item ? item.day : 'Activity');
   const activityText = 'activity' in item ? item.activity : '';
   
   // Try to extract a title from the activity text (e.g., split by dash or take first few words)
@@ -26,11 +26,13 @@ const formattedItinerary = tour.itinerary.map((item) => {
   let description = activityText;
   
   if (activityText.includes(' - ')) {
-    [title, ...description] = activityText.split(' - ');
-    description = description.join(' - ');
+    const parts = activityText.split(' - ');
+    title = parts[0];
+    description = parts.slice(1).join(' - ');
   } else if (activityText.includes(': ')) {
-    [title, ...description] = activityText.split(': ');
-    description = description.join(': ');
+    const parts = activityText.split(': ');
+    title = parts[0];
+    description = parts.slice(1).join(': ');
   } else {
     // Fallback: use the first 5 words as title
     const words = activityText.split(' ');
@@ -76,9 +78,6 @@ const formattedInclusions = (tour.inclusions || []).map((inc) => {
   return { icon, label: inc };
 });
 
-const gallery = [
-  { src: tour.image, alt: tour.title, col: 'col-span-12', h: 'h-80 md:h-96' },
-];
 ---
 
 <Layout
@@ -101,35 +100,50 @@ const gallery = [
 
       <!-- Overview -->
       <section data-aos="fade-up" class="flex flex-col gap-5 md:gap-6">
+        <div class="flex flex-wrap items-center gap-3">
+          <span class="inline-flex items-center gap-1.5 bg-secondary-container text-on-secondary-container text-xs font-label uppercase tracking-widest px-3 py-1.5 rounded-full">
+            <span class="material-symbols-outlined text-sm">category</span>
+            {tour.category}
+          </span>
+          {'participants' in tour && tour.participants !== '-' && (
+            <span class="inline-flex items-center gap-1.5 bg-surface-container text-on-surface-variant text-xs font-label uppercase tracking-widest px-3 py-1.5 rounded-full">
+              <span class="material-symbols-outlined text-sm">group</span>
+              {tour.participants}
+            </span>
+          )}
+        </div>
         <h2 class="font-headline text-3xl md:text-4xl text-primary font-semibold tracking-tight">Overview</h2>
         <div class="font-body text-base md:text-lg text-on-surface-variant leading-relaxed space-y-5 md:space-y-6">
           <p>{tour.description}</p>
-          {tour.exclusions && (
-             <div class="mt-8">
-                <h3 class="font-headline text-xl text-primary font-semibold mb-3">Exclusions</h3>
-                <ul class="list-disc list-inside space-y-2">
-                  {tour.exclusions.map((ex) => (
-                    <li class="text-on-surface-variant">{ex}</li>
-                  ))}
-                </ul>
-             </div>
-          )}
         </div>
+
+        {tour.location && (
+          <div class="mt-2">
+            <h3 class="font-headline text-xl text-primary font-semibold mb-3">Locations</h3>
+            <ul class="flex flex-col gap-2">
+              {tour.location.split(', ').map((loc: string) => (
+                <li class="flex items-center gap-2 font-body text-sm text-on-surface-variant">
+                  <span class="material-symbols-outlined text-primary text-base" style="font-variation-settings:'FILL' 1">location_on</span>
+                  {loc}
+                </li>
+              ))}
+            </ul>
+          </div>
+        )}
+
+        {tour.exclusions && tour.exclusions.length > 0 && (
+          <div class="mt-2">
+            <h3 class="font-headline text-xl text-primary font-semibold mb-3">Exclusions</h3>
+            <ul class="list-disc list-inside space-y-2">
+              {tour.exclusions.map((ex: string) => (
+                <li class="text-on-surface-variant">{ex}</li>
+              ))}
+            </ul>
+          </div>
+        )}
       </section>
 
-      <!-- Gallery (Placeholder with main image) -->
-      <section data-aos="fade-up" class="flex flex-col gap-4 md:gap-6">
-        <h2 class="font-headline text-2xl md:text-3xl text-primary font-semibold tracking-tight">Glimpses of Your Journey</h2>
-        <div class="grid grid-cols-12 gap-3 md:gap-4">
-          {gallery.map((img, i) => (
-            <div data-aos="fade-up" data-aos-delay={String(i * 80)} class={`${img.col} ${img.h} rounded-lg overflow-hidden relative group`}>
-              <img alt={img.alt} class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" src={img.src} />
-            </div>
-          ))}
-        </div>
-      </section>
-
-      <TourItinerary items={formattedItinerary} />
+<TourItinerary items={formattedItinerary} />
 
       <!-- Mobile Booking CTA -->
       <div class="lg:hidden">
@@ -146,8 +160,8 @@ const gallery = [
     <!-- Right: Sticky Booking Widget -->
     <div class="lg:col-span-4">
       <BookingWidget
-        priceFrom={`$${tour.price}`}
-        basePrice={tour.price}
+        priceFrom={typeof tour.price === 'number' ? `IDR ${tour.price.toLocaleString('id-ID')}` : tour.price}
+        basePrice={typeof tour.price === 'number' ? tour.price : 0}
         inclusions={formattedInclusions}
         whatsappNumber="6281238211110"
       />

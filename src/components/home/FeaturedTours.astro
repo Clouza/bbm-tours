@@ -13,7 +13,7 @@ const featuredTours = toursData.slice(0, 4).map((tour, index) => {
     ...tour,
     ...layouts[index],
     delay: (index * 100).toString(),
-    price: `From $${tour.price}`
+    price: typeof tour.price === 'number' ? `From IDR ${tour.price.toLocaleString('id-ID')}` : tour.price
   };
 });
 ---

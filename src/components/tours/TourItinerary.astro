@@ -14,25 +14,32 @@ const { items } = Astro.props;
     Your Expertly Crafted Itinerary
   </h2>
 
-  <div class="flex flex-col gap-3 md:gap-4">
-    {items.map((item, i) => (
-      <div
-        data-aos="fade-up"
-        data-aos-delay={String(i * 80)}
-        class={`flex flex-col sm:flex-row gap-4 md:gap-6 p-6 md:p-8 rounded-lg transition-colors ${
-          item.variant === 'elevated'
-            ? 'bg-surface-container-lowest shadow-[0_10px_30px_rgba(26,28,27,0.03)] hover:bg-surface-container-low'
-            : 'bg-surface-container-low hover:bg-surface-container'
-        }`}
-      >
-        <div class="w-28 shrink-0 font-label font-bold text-secondary tracking-widest uppercase text-sm">
-          {item.time}
+  {items.length > 0 ? (
+    <div class="flex flex-col gap-3 md:gap-4">
+      {items.map((item, i) => (
+        <div
+          data-aos="fade-up"
+          data-aos-delay={String(i * 80)}
+          class={`flex flex-col sm:flex-row gap-4 md:gap-6 p-6 md:p-8 rounded-lg transition-colors ${
+            item.variant === 'elevated'
+              ? 'bg-surface-container-lowest shadow-[0_10px_30px_rgba(26,28,27,0.03)] hover:bg-surface-container-low'
+              : 'bg-surface-container-low hover:bg-surface-container'
+          }`}
+        >
+          <div class="w-28 shrink-0 font-label font-bold text-secondary tracking-widest uppercase text-sm">
+            {item.time}
+          </div>
+          <div class="flex flex-col gap-2">
+            <h3 class="font-headline text-lg md:text-xl text-primary font-semibold">{item.title}</h3>
+            <p class="font-body text-on-surface-variant text-sm md:text-base">{item.description}</p>
+          </div>
         </div>
-        <div class="flex flex-col gap-2">
-          <h3 class="font-headline text-lg md:text-xl text-primary font-semibold">{item.title}</h3>
-          <p class="font-body text-on-surface-variant text-sm md:text-base">{item.description}</p>
-        </div>
-      </div>
-    ))}
-  </div>
+      ))}
+    </div>
+  ) : (
+    <div class="flex flex-col items-center justify-center gap-3 py-12 rounded-lg bg-surface-container-low text-center">
+      <span class="material-symbols-outlined text-4xl text-outline-variant">event_note</span>
+      <p class="font-body text-on-surface-variant text-sm">Detailed itinerary will be shared upon booking confirmation.</p>
+    </div>
+  )}
 </section>
